@@ -1,0 +1,1802 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/stackprof-0.2.16/ext/stackprof
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for rb_postponed_job_register_one()... yes
+checking for rb_profile_frames()... yes
+checking for rb_tracepoint_new()... yes
+checking for RUBY_INTERNAL_EVENT_NEWOBJ... yes
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/stackprof-0.2.16/ext/stackprof
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-1i5ba14 sitelibdir\=./.gem.20221005-89237-1i5ba14 clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/stackprof-0.2.16/ext/stackprof
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-1i5ba14 sitelibdir\=./.gem.20221005-89237-1i5ba14
+compiling stackprof.c
+stackprof.c:149:30: warning: implicit conversion loses integer precision: 'long' to '__darwin_suseconds_t' (aka 'int') [-Wshorten-64-to-32]
+        timer.it_interval.tv_usec = NUM2LONG(interval);
+                                  ~ ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:679:21: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG(x) RB_NUM2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:678:24: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG(x) rb_num2long_inline(x)
+                       ^~~~~~~~~~~~~~~~~~~~~
+stackprof.c:350:36: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        if (rb_respond_to(_stackprof.out, rb_intern("to_io"))) {
+                                          ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+stackprof.c:350:36: note: '{' token is here
+        if (rb_respond_to(_stackprof.out, rb_intern("to_io"))) {
+                                          ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+stackprof.c:350:36: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        if (rb_respond_to(_stackprof.out, rb_intern("to_io"))) {
+                                          ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+stackprof.c:350:36: note: ')' token is here
+        if (rb_respond_to(_stackprof.out, rb_intern("to_io"))) {
+                                          ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+stackprof.c:538:41: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+        timestamp_delta = (1000 * diff.tv_sec) + diff.tv_usec;
+                        ~ ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+stackprof.c:557:76: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+        delta_to_first_unrecorded_gc_sample = (1000 * diff.tv_sec + diff.tv_usec) - (_stackprof.unrecorded_gc_samples - 1) * NUM2LONG(_stackprof.interval);
+                                            ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+stackprof.c:564:19: warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned long') [-Wsign-compare]
+    for (i = 0; i < _stackprof.unrecorded_gc_samples; i++) {
+                ~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+stackprof.c:565:71: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+        int timestamp_delta = i == 0 ? delta_to_first_unrecorded_gc_sample : NUM2LONG(_stackprof.interval);
+            ~~~~~~~~~~~~~~~                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:679:21: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG(x) RB_NUM2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:678:24: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG(x) rb_num2long_inline(x)
+                       ^~~~~~~~~~~~~~~~~~~~~
+stackprof.c:698:34: warning: implicit conversion loses integer precision: 'long' to '__darwin_suseconds_t' (aka 'int') [-Wshorten-64-to-32]
+            timer.it_interval.tv_usec = NUM2LONG(_stackprof.interval);
+                                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:679:21: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG(x) RB_NUM2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:678:24: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG(x) rb_num2long_inline(x)
+                       ^~~~~~~~~~~~~~~~~~~~~
+stackprof.c:716:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(object);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:716:5: note: '{' token is here
+    S(object);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:716:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(object);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:716:5: note: ')' token is here
+    S(object);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:717:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(custom);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:717:5: note: '{' token is here
+    S(custom);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:717:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(custom);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:717:5: note: ')' token is here
+    S(custom);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:718:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(wall);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:718:5: note: '{' token is here
+    S(wall);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:718:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(wall);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:718:5: note: ')' token is here
+    S(wall);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:719:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(cpu);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:719:5: note: '{' token is here
+    S(cpu);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:719:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(cpu);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:719:5: note: ')' token is here
+    S(cpu);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:720:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(name);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:720:5: note: '{' token is here
+    S(name);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:720:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(name);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:720:5: note: ')' token is here
+    S(name);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:721:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(file);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:721:5: note: '{' token is here
+    S(file);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:721:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(file);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:721:5: note: ')' token is here
+    S(file);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:722:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(line);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:722:5: note: '{' token is here
+    S(line);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:722:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(line);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:722:5: note: ')' token is here
+    S(line);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:723:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(total_samples);
+    ^~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:723:5: note: '{' token is here
+    S(total_samples);
+    ^~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:723:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(total_samples);
+    ^~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:723:5: note: ')' token is here
+    S(total_samples);
+    ^~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:724:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(gc_samples);
+    ^~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:724:5: note: '{' token is here
+    S(gc_samples);
+    ^~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:724:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(gc_samples);
+    ^~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:724:5: note: ')' token is here
+    S(gc_samples);
+    ^~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:725:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(missed_samples);
+    ^~~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:725:5: note: '{' token is here
+    S(missed_samples);
+    ^~~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:725:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(missed_samples);
+    ^~~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:725:5: note: ')' token is here
+    S(missed_samples);
+    ^~~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:726:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(samples);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:726:5: note: '{' token is here
+    S(samples);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:726:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(samples);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:726:5: note: ')' token is here
+    S(samples);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:727:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(edges);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:727:5: note: '{' token is here
+    S(edges);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:727:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(edges);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:727:5: note: ')' token is here
+    S(edges);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:728:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(lines);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:728:5: note: '{' token is here
+    S(lines);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:728:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(lines);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:728:5: note: ')' token is here
+    S(lines);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:729:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(version);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:729:5: note: '{' token is here
+    S(version);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:729:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(version);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:729:5: note: ')' token is here
+    S(version);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:730:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(mode);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:730:5: note: '{' token is here
+    S(mode);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:730:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(mode);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:730:5: note: ')' token is here
+    S(mode);
+    ^~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:731:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(interval);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:731:5: note: '{' token is here
+    S(interval);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:731:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(interval);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:731:5: note: ')' token is here
+    S(interval);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:732:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(raw);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:732:5: note: '{' token is here
+    S(raw);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:732:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(raw);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:732:5: note: ')' token is here
+    S(raw);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:733:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(raw_timestamp_deltas);
+    ^~~~~~~~~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:733:5: note: '{' token is here
+    S(raw_timestamp_deltas);
+    ^~~~~~~~~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:733:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(raw_timestamp_deltas);
+    ^~~~~~~~~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:733:5: note: ')' token is here
+    S(raw_timestamp_deltas);
+    ^~~~~~~~~~~~~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:734:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(out);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:734:5: note: '{' token is here
+    S(out);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:734:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(out);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:734:5: note: ')' token is here
+    S(out);
+    ^~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:735:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(metadata);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:735:5: note: '{' token is here
+    S(metadata);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:735:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(metadata);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:735:5: note: ')' token is here
+    S(metadata);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:736:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(ignore_gc);
+    ^~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:736:5: note: '{' token is here
+    S(ignore_gc);
+    ^~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:736:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(ignore_gc);
+    ^~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:736:5: note: ')' token is here
+    S(ignore_gc);
+    ^~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:737:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(frames);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:737:5: note: '{' token is here
+    S(frames);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:737:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(frames);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:737:5: note: ')' token is here
+    S(frames);
+    ^~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:738:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(aggregate);
+    ^~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:738:5: note: '{' token is here
+    S(aggregate);
+    ^~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:738:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(aggregate);
+    ^~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:738:5: note: ')' token is here
+    S(aggregate);
+    ^~~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:739:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(state);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:739:5: note: '{' token is here
+    S(state);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:739:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(state);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:739:5: note: ')' token is here
+    S(state);
+    ^~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:740:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(marking);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:740:5: note: '{' token is here
+    S(marking);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:740:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(marking);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:740:5: note: ')' token is here
+    S(marking);
+    ^~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:741:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(sweeping);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:741:5: note: '{' token is here
+    S(sweeping);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:741:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    S(sweeping);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+stackprof.c:741:5: note: ')' token is here
+    S(sweeping);
+    ^~~~~~~~~~~
+stackprof.c:715:37: note: expanded from macro 'S'
+#define S(name) sym_##name = ID2SYM(rb_intern(#name));
+                                    ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+60 warnings generated.
+linking shared-object stackprof/stackprof.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/stackprof-0.2.16/ext/stackprof
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-1i5ba14 sitelibdir\=./.gem.20221005-89237-1i5ba14 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 stackprof.bundle ./.gem.20221005-89237-1i5ba14/stackprof

@@ -1,0 +1,15 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/scout_apm-5.3.1/ext/rusage
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/scout_apm-5.3.1/ext/rusage
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-nszx9z sitelibdir\=./.gem.20221005-97445-nszx9z clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/scout_apm-5.3.1/ext/rusage
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-nszx9z sitelibdir\=./.gem.20221005-97445-nszx9z
+compiling rusage.c
+linking shared-object rusage.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/scout_apm-5.3.1/ext/rusage
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-nszx9z sitelibdir\=./.gem.20221005-97445-nszx9z install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 rusage.bundle ./.gem.20221005-97445-nszx9z

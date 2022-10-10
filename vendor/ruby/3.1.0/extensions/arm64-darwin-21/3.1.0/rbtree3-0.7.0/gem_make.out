@@ -1,0 +1,63 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/rbtree3-0.7.0
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+checking for rb_exec_recursive() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/rbtree3-0.7.0
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-ubz6th sitelibdir\=./.gem.20221005-11094-ubz6th clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/rbtree3-0.7.0
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-ubz6th sitelibdir\=./.gem.20221005-11094-ubz6th
+compiling dict.c
+compiling rbtree.c
+rbtree.c:125:14: warning: incompatible pointer to integer conversion passing 'const void *' to parameter of type 'VALUE' (aka 'unsigned long') [-Wint-conversion]
+    if (TYPE(key1) == T_STRING && TYPE(key2) == T_STRING)
+             ^~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/value_type.h:107:52: note: expanded from macro 'TYPE'
+#define TYPE(_)           RBIMPL_CAST((int)rb_type(_))
+                                                   ^
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/cast.h:31:29: note: expanded from macro 'RBIMPL_CAST'
+# define RBIMPL_CAST(expr) (expr)
+                            ^~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/value_type.h:224:15: note: passing argument to parameter 'obj' here
+rb_type(VALUE obj)
+              ^
+rbtree.c:125:40: warning: incompatible pointer to integer conversion passing 'const void *' to parameter of type 'VALUE' (aka 'unsigned long') [-Wint-conversion]
+    if (TYPE(key1) == T_STRING && TYPE(key2) == T_STRING)
+                                       ^~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/value_type.h:107:52: note: expanded from macro 'TYPE'
+#define TYPE(_)           RBIMPL_CAST((int)rb_type(_))
+                                                   ^
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/cast.h:31:29: note: expanded from macro 'RBIMPL_CAST'
+# define RBIMPL_CAST(expr) (expr)
+                            ^~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/value_type.h:224:15: note: passing argument to parameter 'obj' here
+rb_type(VALUE obj)
+              ^
+rbtree.c:304:18: warning: incompatible pointer to integer conversion passing 'const void *' to parameter of type 'VALUE' (aka 'unsigned long') [-Wint-conversion]
+        if (TYPE(arg->key) == T_STRING)
+                 ^~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/value_type.h:107:52: note: expanded from macro 'TYPE'
+#define TYPE(_)           RBIMPL_CAST((int)rb_type(_))
+                                                   ^
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/cast.h:31:29: note: expanded from macro 'RBIMPL_CAST'
+# define RBIMPL_CAST(expr) (expr)
+                            ^~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/value_type.h:224:15: note: passing argument to parameter 'obj' here
+rb_type(VALUE obj)
+              ^
+rbtree.c:1527:12: warning: 'rb_iterate' is deprecated: by: rb_block_call since 1.9 [-Wdeprecated-declarations]
+    return rb_iterate(pp_object_group, (VALUE)&pp_arg,
+           ^
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/iterator.h:269:1: note: 'rb_iterate' has been explicitly marked deprecated here
+RBIMPL_ATTR_DEPRECATED(("by: rb_block_call since 1.9"))
+^
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+# define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+                                                    ^
+4 warnings generated.
+linking shared-object rbtree.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/rbtree3-0.7.0
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-ubz6th sitelibdir\=./.gem.20221005-11094-ubz6th install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 rbtree.bundle ./.gem.20221005-11094-ubz6th

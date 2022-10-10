@@ -1,0 +1,19 @@
+<%= form_tag(admin_retailer_priority_update_retailer_priority_path, method: "post", multipart: true, :class => 'formtastic' ) do |f| %>
+	<fieldset class="inputs">
+		<legend>
+			<span>Retailer Priority</span>
+		</legend>
+		<ol>
+			<%retailers.each do |retailer|%>
+			<li class = 'string input optional stringish'>
+				<%= label_tag retailer.name %>
+				<%= text_field_tag "retailers[#{retailer.id}]", retailer.priority %>
+			</li>
+			<%end%>
+		</ol>
+	</fieldset>
+	<fieldset class="actions">
+  		<%= submit_tag 'Save' %>
+  	</fieldset>
+<% end %>
+<br/>

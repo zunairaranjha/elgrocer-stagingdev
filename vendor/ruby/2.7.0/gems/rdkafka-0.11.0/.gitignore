@@ -1,0 +1,8 @@
+Gemfile.lock
+ext/ports
+ext/tmp
+ext/librdkafka.*
+*.gem
+.yardoc
+doc
+coverage

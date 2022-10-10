@@ -1,0 +1,16 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/stringio-3.0.2/ext/stringio
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+checking for rb_io_extract_modeenc() in ruby/io.h... yes
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/stringio-3.0.2/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-3adbwj sitelibdir\=./.gem.20221005-11094-3adbwj clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/stringio-3.0.2/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-3adbwj sitelibdir\=./.gem.20221005-11094-3adbwj
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/stringio-3.0.2/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-3adbwj sitelibdir\=./.gem.20221005-11094-3adbwj install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 stringio.bundle ./.gem.20221005-11094-3adbwj

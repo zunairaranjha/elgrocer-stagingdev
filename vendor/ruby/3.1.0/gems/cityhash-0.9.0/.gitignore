@@ -1,0 +1,7 @@
+*.so
+*.bundle
+.bundle
+Gemfile.lock
+pkg/*
+tmp/*
+vendor/bundle

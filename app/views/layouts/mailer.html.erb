@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body dir= <%= I18n.locale == :ar ? "RTL" : "LTR" %>>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rgeo-2.4.0/ext/geos_c_impl
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for geos-config... no
+checking for geos_c.h... no
+**** WARNING: Unable to find GEOS headers or libraries.
+**** Ensure that 'geos-config' is in your PATH or provide that full path via --with-geos-config
+**** Compiling without GEOS support.
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rgeo-2.4.0/ext/geos_c_impl
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-exi93z sitelibdir\=./.gem.20221005-97445-exi93z clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rgeo-2.4.0/ext/geos_c_impl
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-exi93z sitelibdir\=./.gem.20221005-97445-exi93z
+make: Nothing to be done for `install'.
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rgeo-2.4.0/ext/geos_c_impl
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-exi93z sitelibdir\=./.gem.20221005-97445-exi93z install
+make: Nothing to be done for `install'.

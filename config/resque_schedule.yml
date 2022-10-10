@@ -1,0 +1,118 @@
+welocme_emails:
+  cron: '00 00 * * *'
+  class: WelcomeEmailsJob
+  queue: welcome_emails_queue
+  args: { interval: 24 }
+  description: It will send the welocme email to the shoppers registered in last 24 hours.
+
+reminder_emails:
+  cron: '00 00 * * *'
+  class: ReminderEmailsJob
+  queue: reminder_emails_queue
+  args:
+  description: It will send the reminder email to the shoppers to put an order.
+
+shop_products_rule:
+  cron: '00 00 * * *'
+  class: ShopProductRuleJob
+  queue: shop_products_rule
+  args:
+  description: It will mark products available for selected categories in rule-engine at specified time.
+
+abandon_basket_emails:
+  cron: '00 00 * * *'
+  class: AbandonBasketEmailsJob
+  queue: abandon_basket_emails_queue
+  args:
+  description: It will send the reminder email to the shoppers who abandon baskets.
+
+partner_integration_stock:
+  cron: '*/30 * * * *'
+  class: UcStockUpdateJob
+  queue: partner_integration_queue
+  args:
+  description: Update UC stock availability
+
+partner_integration_price:
+  cron: '0 */2 * * *'
+  class: UcPriceUpdateJob
+  queue: partner_integration_queue
+  args:
+  description: Update UC stock prices
+
+partner_integration:
+  cron: '0 */1 * * *'
+  class: PartnerIntegrationJob
+  queue: partner_integration_queue
+  args:
+  description: It will call the api for fetch data after evey 3 hours interval
+
+order_delivery_status:
+  cron: '0 */1 * * *'
+  class: OrderDeliveryStatusJob
+  queue: order
+  args:
+  description: It will change the stats of orders to delivered that are in accept or en_route state for specific time. This job run with 1hr interval
+
+brand_search_keywords:
+  cron: '00 00 * * *'
+  class: BrandSearchKeywordJob
+  queue: product_indexing_queue
+  args:
+  description: It will check expire brand_search_keywords and do Product Indexing.
+
+employee_idle_tracker:
+  cron: '*/10 * * * *'
+  class: EmployeeIdleMonitorJob
+  queue: order_allocation
+  args:
+  description: It will check for the idle employees and logout them.
+
+order_tracking_job:
+  cron: '*/5 * * * *'
+  class: OrderTrackingJob
+  queue: order_tracking_queue
+  args:
+  description: It will track the orders and send notifications to Slack.
+
+shop_promotion_indexing:
+  cron: '00 00 * * *'
+  class: ShopPromotionIndexingJob
+  queue: product_indexing_queue
+  args:
+  description: It will check active and expire shop promotions and do Product Indexing.
+
+archive_data_job:
+  cron: '00 00 * * */7'
+  class: ArchiveDataJob
+  queue: archive_data_queue
+  args:
+  description: It will archive the old data.
+
+sitemap_update:
+  cron: '00 4 * * */3'
+  class: SitemapUpdate
+  queue: sitemap_update_queue
+  args:
+  description: This will update sitemaps
+
+warehouse_inventory_job:
+  cron: '*/10 * * * *'
+  class: WarehouseJob
+  queue: warehouse_jobs
+  args: { inventory: true }
+  description: This Job is to fetch the updated inventory from ware house and update in our system.
+
+sending_permanently_disble_products_job:
+  cron: '0 0 * * */7'
+  class: PermanentlyDisableProductJob
+  queue: disabled_products_queue
+  args:
+  description: This Job is to send email to catalog team about the permanently diabled products on weekly basis.
+
+reset_smiles_attempts:
+  cron: '0 0 * * *'
+  class: ResetSmilesOtpAttemptsJob
+  queue: reset_smiles_attempts_queue
+  args:
+  description: This will reset smiles shopper OTP attempts

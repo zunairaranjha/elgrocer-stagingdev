@@ -1,0 +1,518 @@
+<html class=<%= @extra_params[:locale] %> dir=<%= @extra_params[:locale].to_s.downcase.eql?('ar') ? 'rtl' : 'ltr' %> lang=<%= @extra_params[:locale] %>>
+<%
+  requestParams= {'service_command' => "TOKENIZATION", 'access_code' => ENV['PAYFORT_ACCESS_CODE'], 'merchant_identifier' => ENV['MERCHANT_IDENTIFIER'], 'merchant_reference' => @extra_params[:merchant_reference], 'language' => 'en', 'return_url' => ENV["BASE_URL"] + online_payments_tokenization_response_path, 'merchant_extra' => @extra_params[:client_ip], 'merchant_extra1' => @extra_params[:customer_email], 'merchant_extra2' => @extra_params[:web_url]}
+  @signature = Digest::SHA2.hexdigest(ENV['SHA_REQUEST_PHRASE'] + requestParams.sort_by { |key| key }.map{ |key,value| key+'='+value }.join + ENV['SHA_REQUEST_PHRASE'])
+%>
+
+<% content_for :head do %>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+  <script>
+      var firebaseConfig = {
+          apiKey: "<%= ENV['FIREBASE_LOGS_KEY']%>",
+          authDomain: "<%= ENV['FIREBASE_AUTHDOMEIN'] %>",
+          databaseURL: "<%= ENV['FIREBASE_DBURL'] %>",
+          projectId: "<%= ENV['FIREBASE_PROJECT_Id'] %>",
+          storageBucket: "<%= ENV['FIREBASE_STORAGE_BUCKET'] %>",
+          messagingSenderId: "<%= ENV['FIREBASE_MESSAGE_SENDER_ID'] %>",
+          appId: "<%= ENV['FIREBASE_APP_ID'] %>",
+          measurementId: "<%= ENV['FIREBASE_MEASURE_ID'] %>"
+      };
+      firebase.initializeApp(firebaseConfig);
+      var analytics = firebase.analytics();
+      function pageLoad() {
+          analytics.setCurrentScreen('Credit-Card-Page');
+          <% if @extra_params[:merchant_reference].split('-')[0].downcase.eql?('m') %>
+          analytics.logEvent('EG_manageCardPageLoad', { 'userID':"<%= @extra_params[:merchant_reference].split('-')[1] %>", 'Type':'Manage Card', 'Source':"<%= @extra_params[:source] %>", 'AppVersion':"<%= @extra_params[:app_version].to_s %>", 'Email':"<%=@extra_params[:customer_email] %>", 'Lang':"<%= @extra_params[:locale] %>"});
+          <% else %>
+          analytics.logEvent('EG_checkoutCardPageLoad', { 'OrderID':"<%= @extra_params[:merchant_reference].split('-')[1] %>", 'Type':'Check Out', 'Source':"<%= @extra_params[:source] %>", 'AppVersion':"<%= @extra_params[:app_version].to_s %>", 'Email':"<%=@extra_params[:customer_email] %>", 'Lang':"<%= @extra_params[:locale] %>"});
+          <% end %>
+      }
+
+      function submitbtnClick() {
+          <% if @extra_params[:merchant_reference].split('-')[0].downcase.eql?('m') %>
+          analytics.logEvent('EG_manageCardDetailsSubmit', { 'userID':"<%= @extra_params[:merchant_reference].split('-')[1] %>", 'Type':'Manage Card', 'Source':"<%= @extra_params[:source] %>", 'AppVersion':"<%= @extra_params[:app_version].to_s %>", 'Email':"<%=@extra_params[:customer_email] %>", 'Lang':"<%= @extra_params[:locale] %>"});
+          <% else %>
+          analytics.logEvent('EG_checkoutCardDetailsSubmit', { 'OrderID':"<%= @extra_params[:merchant_reference].split('-')[1] %>", 'Type':'Check Out', 'Source':"<%= @extra_params[:source] %>", 'AppVersion':"<%= @extra_params[:app_version].to_s %>", 'Email':"<%=@extra_params[:customer_email] %>", 'Lang':"<%= @extra_params[:locale] %>"});
+          <% end %>
+      }
+
+      function backbtnClick() {
+          <% if @extra_params[:merchant_reference].split('-')[0].downcase.eql?('m') %>
+          analytics.logEvent('EG_manageCardPageClose', { 'userID':"<%= @extra_params[:merchant_reference].split('-')[1] %>", 'Type':'Manage Card', 'Source':"<%= @extra_params[:source] %>", 'AppVersion':"<%= @extra_params[:app_version].to_s %>", 'Email':"<%=@extra_params[:customer_email] %>", 'Lang':"<%= @extra_params[:locale] %>"});
+          <% else %>
+          analytics.logEvent('EG_checkoutCardPageClose', { 'OrderID':"<%= @extra_params[:merchant_reference].split('-')[1] %>", 'Type':'Check Out', 'Source':"<%= @extra_params[:source] %>", 'AppVersion':"<%= @extra_params[:app_version].to_s %>", 'Email':"<%=@extra_params[:customer_email] %>", 'Lang':"<%= @extra_params[:locale] %>"});
+          <% end %>
+      }
+
+  </script>
+  <style type="text/css">
+  body{margin:0;padding:0;font-family:Arial; height: 100%;}
+  .creditCardForm{max-width:700px;background:#f7f7f7;margin:0 auto;padding:30px;box-sizing:border-box;position: relative;}
+  .creditCardForm h3{margin:0 0 20px;padding:0px;}
+  .form_grid{display:block;width:100%;margin-bottom:25px;}
+  .left_input{display:inline-block;width:70%;margin-right:-4px;padding-right:5px;box-sizing:border-box;}
+  .ar .left_input{width:68%;margin-left:2%;}
+  .right_input{display:inline-block;width:30%;margin-right:-4px;}
+  .form_grid label{display:block;margin-bottom:7px;}
+  .form_grid input{display:block !important; width:100% !important; padding:15px !important; border-radius:6px !important; box-sizing:border-box !important; border:1px solid #4fa647 !important; }
+  .form_grid input[type="checkbox"]{display:inline-block !important;width:auto !important;}
+  .form_grid input:focus {border-color:#4fa647 !important; outline: 0 !important; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(79,166,71,.6) !important; box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(79,166,71,.6) !important; }
+  .form_grid select{width:100% !important; padding:10px !important; border-radius:6px !important; box-sizing:border-box !important; border:1px solid #4fa647 !important; }
+  .form_grid option{font-size:16px !important;}
+  .submit_btn{width:100% !important; font-size:20px !important; display:block !important; text-align:center !important; cursor:pointer !important; border:1px solid transparent !important; padding:12px 12px !important; box-sizing:border-box !important; border-radius:4px !important; color:#fff !important; background-color:#429d39 !important; background-image: none !important;}
+  .submit_btn:hover{color:#fff;background-color:#5aaf52;box-shadow:0 6px 12px 0 rgba(66,157,57,.37);}
+
+  .error_msg{position: absolute;font-size: 12px;padding-left: 16px;margin-top: 4px;color: red;}
+  .header_logo{display:block;width:100%;background:#ffffff;padding: 20px 15px 15px;box-sizing: border-box;margin-bottom:10px;min-height:75px;}
+  .header_logo img{max-width:160px;}
+  #expiration_dateaMask{display:none;}
+  .back_btn{float:right !important;background-color:#e7e7e7 !important;color:#4fa647 !important;padding:9px 15px !important; border-radius:5px !important; text-decoration:none !important; }
+  .ar .back_btn{float: left !important;}
+  .back_btn:hover{box-shadow:0 3px 8px 0 rgb(10 10 10 / 10%);}
+  .selectboxCon{display:flex;}
+  .selectBox{height:47px;border:1px solid #4fa647;border-radius:6px;padding:15px;}
+  .selectBox:focus{outline:none;}
+  .checkbox_form{position: relative;}
+  .checkbox_lable{font-size:14px;}
+  .ar .form_grid label{font-weight:600 !important;}
+  .ar .error_msg{font-size:14px !important;font-weight:600 !important;}
+  .ar #expiryYear {margin-right: 10px}
+  .en #expiryMonth {margin-right: 10px}
+
+  .checkbox {display: inline-flex;cursor: pointer;position: relative;display: inline-flex !important;}
+  .checkbox > input {height: 10px;width: 10px;padding:8px !important;-webkit-appearance: none;-moz-appearance: none;-o-appearance: none;appearance: none;border-radius: 4px;outline: none;transition-duration: 0.3s;background-color: #f8f8f8;cursor: pointer;margin:0; margin-right:5px;}
+  .checkbox > input:checked {border-color: #41B883;background-color: #5aaf52;}
+  .ar .checkbox > input:checked {border-color: #41B883;background-color: #5aaf52;}
+  .checkbox > input:checked + span::before {content: '\2713';display: block;text-align: center;color: #fff;position: absolute;left: 5px;top: 0px;font-size:14px;}
+  .ar .checkbox > input:checked + span::before {content: '\2713';display: block;text-align: center;color: #fff;position: absolute;left: auto;right: 8px;top: 0px;font-size:14px;}
+  .checkbox > input:active {border: 1px solid #5aaf52;}
+  .checkbox span{font-size: 14px;}
+  .ar .checkbox span {
+      padding-right: 7px;
+  }
+  .ar .one_aed { font-size: 15px}
+
+
+  @media (max-width:1024px){
+    .checkbox_form .form_grid{margin-bottom:0;}
+    .checkbox_form{left: 32px;right: 30px;}
+    .submit_btn{margin-top: 100px;}
+    .checkbox_form{bottom: 125px;}
+  }
+  .submit_btn:disabled {
+    background: #9a9898 !important;
+  }
+</style>
+<% end %>
+
+<body onload="pageLoad()">
+<% if !@extra_params[:web_url].eql?('1') %>
+  <div class="header_logo">
+    <img src="https://elgrocer-data.s3.us-east-2.amazonaws.com/elgrocer/site-logo-green.png">
+  <a href=<%= Base64.decode64(@extra_params[:web_url]) %>; class="back_btn" onclick="backbtnClick()"><%= I18n.t("payment_pages.back_to") %></a>
+</div>
+<% end %>
+
+<div class="creditCardForm" oninput="validateform()">
+  <form id="add_new_cadit_card" class="add_new_cadit_card" method="post" name="card_form" onsubmit="check_disable()" action=<%="#{ENV['PAYFORT_CHECKOUT_URL']}"%>>
+    <h3><%= I18n.t("payment_pages.add_new_credit_card") %></h3>
+    <div class="form_grid">
+      <div class="left_input">
+        <label><%= I18n.t("payment_pages.card_holder_name") %>:</label>
+        <input id="card_holder_namea" name="card_holder_name" type="text" onfocusout="validatename()" oninput="validatename()" placeholder="<%= I18n.t('payment_pages.card_holder_name') %>" autofocus>
+        <span id="card_holder_name" class="error_msg"></span>
+      </div>
+      <div class="right_input">
+        <label><%= I18n.t("payment_pages.cvv") %>:</label>
+        <input id="cvva" name="card_security_code" maxlength="3" type="password" inputmode="tel" onfocusout="validatecvv()" placeholder="<%= I18n.t('payment_pages.cvv') %>"
+               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');validatecvv()">
+        <span id="cvv" class="error_msg"></span>
+      </div>
+    </div>
+    <div class="form_grid">
+      <label><%= I18n.t("payment_pages.card_number") %>:</label>
+      <input id="card_numbera" type="text" name="card_number" pattern="\d*" placeholder="<%= I18n.t('payment_pages.card_number') %>"
+             maxlength="16" oninput="maxLengthCheck(this)" onfocusout="validatenumber()"
+             onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+      <span id="card_number" class="error_msg"></span>
+    </div>
+    <div class="form_grid">
+      <label><%= I18n.t("payment_pages.expiration_date") %>:</label>
+      <div class="selectboxCon">
+        <select class="selectBox" id="expiryMonth" onchange="validatedate()">
+          <option value=''><%= I18n.t('month.month') %></option>
+          <option value='01'><%= I18n.t('month.January') %></option>
+          <option value='02'><%= I18n.t('month.February') %> </option>
+          <option value='03'><%= I18n.t('month.March') %></option>
+          <option value='04'><%= I18n.t('month.April') %></option>
+          <option value='05'><%= I18n.t('month.May') %></option>
+          <option value='06'><%= I18n.t('month.June') %></option>
+          <option value='07'><%= I18n.t('month.uly') %></option>
+          <option value='08'><%= I18n.t('month.August') %></option>
+          <option value='09'><%= I18n.t('month.September') %></option>
+          <option value='10'><%= I18n.t('month.October') %></option>
+          <option value='11'><%= I18n.t('month.November') %></option>
+          <option value='12'><%= I18n.t('month.December') %></option>
+        </select>
+
+        <select class="selectBox" id="expiryYear" onchange="validatedate()">
+          <option value=""><%= I18n.t("month.year") %></option>
+        </select>
+      </div>
+      <div style="clear:both;"></div>
+      <span id="expiration_date" class="error_msg"></span>
+    </div>
+
+    <div class="form_grid" style="display:none;">
+      <label><%= I18n.t("payment_pages.expiration_date") %>:</label>
+      <input class="masked" id="expiration_datea" maxlength="4" type="text" name="expiry_date" placeholder="YYMM">
+      <span id="expiration_date" class="error_msg"></span>
+      <input type="hidden" name='service_command' value="TOKENIZATION" >
+      <input type="hidden" name='access_code' value=<%=ENV["PAYFORT_ACCESS_CODE"]%> >
+      <input type="hidden" name='merchant_identifier' value=<%= ENV["MERCHANT_IDENTIFIER"] %>>
+      <input type="hidden" name='merchant_reference' value=<%=@extra_params[:merchant_reference] %> >
+      <input type="hidden" name='language' value= "en" >
+      <input type="hidden" name='signature' value=<%=@signature %> >
+      <input type="hidden" name='return_url' value=<%= ENV["BASE_URL"] + online_payments_tokenization_response_path%>>
+      <input type="hidden" name='merchant_extra' value=<%= @extra_params[:client_ip]%> >
+      <input type="hidden" name='merchant_extra1' value=<%= @extra_params[:customer_email]%>>
+      <input type="hidden" name='merchant_extra2' value=<%= @extra_params[:web_url]%>>
+    </div>
+    <div id="loader" style="position:fixed;top:0px;background: rgba(0,0,0,.3);width: 100%;left:0;height:100%;text-align:center; display: none">
+      <img style="top: 50%;margin-left:-30px; position: absolute;" src="https://elgrocer-data.s3.us-east-2.amazonaws.com/elgrocer/loading.gif">
+    </div>
+<!--    <div class="form_grid">-->
+<!--      <input id = "accept_check_box" type="checkbox" onclick="validateform()">-->
+<!--      I accept a change in the final billed amount for fresh item's weight variance as per store receipt.-->
+<!--    </div>-->
+<!--    <div class="checkbox_form">-->
+      <div class="form_grid">
+        <label class="checkbox">
+          <input id = "accept_check_box" type="checkbox" onclick="validateform()">
+          <span><%= I18n.t("payment_pages.accept_amount_changes") %></span>
+        </label>
+      </div>
+<!--    </div>-->
+    <% if @extra_params[:merchant_reference].split('-')[0].downcase.eql?('m') %>
+      <div class="form_grid one_aed" style="color: red">
+        <%= I18n.t("payment_pages.aed_1_auth") %>
+      </div>
+    <% end %>
+    <div class="form_grid">
+      <% if @extra_params[:merchant_reference].split('-')[0].downcase.eql?('m') %>
+        <button id = "submit_btn" class="submit_btn" type="submit" onclick="submitbtnClick()" disabled ><%= I18n.t("payment_pages.add_card") %></button>
+      <% else %>
+        <button id = "submit_btn" class="submit_btn" type="submit" onclick="submitbtnClick()" disabled><%= I18n.t("payment_pages.confirm_and_order") %></button>
+      <% end %>
+    </div>
+  </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        var start_year = new Date().getFullYear();
+        for (var i = start_year; i < start_year + 11; i++) {
+            $('#expiryYear').append('<option value="' + i + '">' + i + '</option>');
+        }
+    });
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+    if(isAndroid) {
+        $(function() {
+            $('#cvva').attr('inputmode', 'numeric');
+            $('#card_numbera').attr('inputmode', 'numeric').attr('onkeyup','numberMobile(event)');
+        });
+    }
+
+</script>
+
+<script>
+
+    var global_card_holder_name = document.getElementById("card_holder_namea");
+    var global_cvv = document.getElementById("cvva");
+    var global_card_number = document.getElementById("card_numbera");
+    var global_expiryYear = document.getElementById("expiryYear");
+    var global_expiryMonth = document.getElementById("expiryMonth");
+
+    function numberMobile(e){
+        e.target.value = e.target.value.replace(/[^\d]/g,'');
+        return false;
+    }
+
+    function handlePaste (e) {
+        var clipboardData, pastedData;
+
+        // Stop data actually being pasted into div
+        //e.stopPropagation();
+        //e.preventDefault();
+
+        // Get pasted data via clipboard API
+        clipboardData = e.clipboardData || window.clipboardData;
+        pastedData = clipboardData.getData('Text');
+
+        // Do whatever with pasteddata
+        paste_flag = true
+        var card_number = document.card_form.card_number.value;
+        console.log("This", pastedData)
+        if(pastedData.length > 16){
+            //alert("Card Number must be at least 16 characters long.");
+            document.getElementById("card_numbera").setAttribute('style', "border-color:red !important");
+            document.getElementById('card_number').innerHTML = "<%= I18n.t('payment_pages.invalid_card_number') %>";
+            return false;
+        }
+        else if(!pastedData.match(/^[0-9]+$/)){
+            document.getElementById("card_numbera").setAttribute('style', "border-color:red !important");
+            document.getElementById('card_number').innerHTML = "<%= I18n.t('payment_pages.invalid_card_number') %>";
+            return false;
+        } else{
+            document.getElementById("card_numbera").setAttribute('style', "border-color:#4fa647 !important");
+            document.getElementById('card_number').innerHTML = "";
+        }
+        return true;
+    }
+
+    document.getElementById('card_numbera').addEventListener('paste', handlePaste);
+    var paste_flag = false;
+    function maxLengthCheck(object){
+        if (object.value.length > object.maxLength){
+            object.value = object.value.slice(0, object.maxLength);
+        }
+        validatenumber()
+    }
+    function check_disable() {
+        if (validatename() && validatecvv() && validatenumber() && validatedate())
+        {
+            document.getElementById("submit_btn").disabled = true;
+            document.getElementById('loader').style.display = 'block';
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function validatename() {
+        var card_holder_name = document.card_form.card_holder_name.value;
+        var holderName = /^[A-Za-z-.' ]+$/;
+        if (card_holder_name == null || card_holder_name == ""){
+            document.getElementById("card_holder_namea").setAttribute('style', "border-color:red !important");
+            document.getElementById('card_holder_name').innerHTML = "<%= I18n.t('payment_pages.name_cant_blank') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        }
+        else if(!card_holder_name.match(holderName)){
+            document.getElementById("card_holder_namea").setAttribute('style', "border-color:red !important");
+            document.getElementById('card_holder_name').innerHTML = "<%= I18n.t('payment_pages.letters_only') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        }
+        else if(card_holder_name.length<3 || card_holder_name.length>150){
+            document.getElementById("card_holder_namea").setAttribute('style', "border-color:red !important");
+            document.getElementById('card_holder_name').innerHTML = "<%= I18n.t('payment_pages.invalid_name') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        } else{
+            document.getElementById("card_holder_namea").setAttribute('style', "border-color:#4fa647 !important");
+            document.getElementById('card_holder_name').innerHTML = "";
+            return true;
+        }
+    }
+
+    function validatecvv(){
+        var cvv = document.card_form.card_security_code.value;
+        var numeric = /^[0-9]+$/;
+        if (cvv == null || cvv == ""){
+            document.getElementById("cvva").setAttribute('style', "border-color:red !important");
+            document.getElementById('cvv').innerHTML = "<%= I18n.t('payment_pages.cvv_cant_blank') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        }
+        else if(!cvv.match(numeric)){
+            document.getElementById("cvva").setAttribute('style', "border-color:red !important");
+            document.getElementById('cvv').innerHTML = "<%= I18n.t('payment_pages.digits_only') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        }
+        else if(cvv.length <= 2 || cvv.length > 3){
+            document.getElementById("cvva").setAttribute('style', "border-color:red !important");
+            document.getElementById('cvv').innerHTML = "<%= I18n.t('payment_pages.invalid_cvv') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        }
+        else{
+            document.getElementById("cvva").setAttribute('style', "border-color:#4fa647 !important");
+            document.getElementById('cvv').innerHTML = "";
+            return true;
+        }
+
+    }
+
+    function validatenumber(){
+        var card_number = document.card_form.card_number.value;
+        if ((card_number == null || card_number == "") && !paste_flag){
+            document.getElementById("card_numbera").setAttribute('style', "border-color:red !important");
+            document.getElementById('card_number').innerHTML = "<%= I18n.t('payment_pages.card_cant_blank') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        }
+        else if(card_number.length > 16){
+            document.getElementById("card_numbera").setAttribute('style', "border-color:red !important");
+            document.getElementById('card_number').innerHTML = "<%= I18n.t('payment_pages.invalid_card_number') %>";
+            document.getElementById("submit_btn").disabled = true;
+            paste_flag = false;
+            return false;
+        }
+        else if(!card_number.match(/\d{4}(\d{4}){3}\b/)){
+            document.getElementById("card_numbera").setAttribute('style', "border-color:red !important");
+            document.getElementById('card_number').innerHTML = "<%= I18n.t('payment_pages.card_format') %>: 1234123412341234";
+            document.getElementById("submit_btn").disabled = true;
+            paste_flag = false;
+            return false;
+        }
+        else{
+            document.getElementById("card_numbera").setAttribute('style', "border-color:#4fa647 !important");
+            document.getElementById('card_number').innerHTML = "";
+            paste_flag = false;
+            return true;
+        }
+    }
+
+    function validatedate() {
+        var expiryYear = document.getElementById("expiryYear").value.substr(-2);
+        var da = new Date();
+        var expiryMonth = document.getElementById("expiryMonth").value;
+        if (expiryMonth == null || expiryMonth == "" || expiryYear == null || expiryYear == ""){
+            //alert();
+            document.getElementById('expiration_date').innerHTML = "<%= I18n.t('payment_pages.select_month_year') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        }
+        else if(parseInt(expiryMonth) < da.getMonth() && expiryYear == da.getFullYear().toString().substr(-2)){
+            document.getElementById('expiration_date').innerHTML = "<%= I18n.t('payment_pages.expiry_invalid') %>";
+            document.getElementById("submit_btn").disabled = true;
+            return false;
+        }
+        else{
+            document.getElementById('expiration_datea').value = expiryYear + expiryMonth;
+            document.getElementById('expiration_date').innerHTML = "";
+            return true;
+        }
+    }
+
+    function validateform(){
+        var return_validation;
+        // var expiryYear = document.getElementById("expiryYear").value.substr(-2);
+        // var expiryMonth = document.getElementById("expiryMonth").value;
+        // var card_holder_name = document.card_form.card_holder_name.value;
+        // var cvv = document.card_form.card_security_code.value;
+        // var card_number = document.card_form.card_number.value;
+        // var expiration_date = document.card_form.expiry_date.value;
+        // var numeric = /^[0-9]+$/;
+        // var holderName = /^[A-Za-z-.' ]+$/;
+        // var expiry_date = /[\d]{2}\/[\d]{2}/;
+
+<!--        if (card_holder_name == null || card_holder_name == ""){-->
+<!--            document.getElementById("card_holder_namea").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('card_holder_name').innerHTML = "<%= I18n.t('payment_pages.name_cant_blank') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else if(!card_holder_name.match(holderName)){-->
+<!--            document.getElementById("card_holder_namea").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('card_holder_name').innerHTML = "<%= I18n.t('payment_pages.letters_only') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else if(card_holder_name.length<3 || card_holder_name.length>150){-->
+<!--            document.getElementById("card_holder_namea").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('card_holder_name').innerHTML = "<%= I18n.t('payment_pages.invalid_name') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            return_validation = false;-->
+<!--        } else{-->
+<!--            document.getElementById("card_holder_namea").setAttribute('style', "border-color:#4fa647 !important");-->
+<!--            document.getElementById('card_holder_name').innerHTML = "";-->
+<!--            return_validation = true;-->
+<!--        }-->
+
+<!--        if (cvv == null || cvv == ""){-->
+<!--            document.getElementById("cvva").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('cvv').innerHTML = "<%= I18n.t('payment_pages.cvv_cant_blank') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else if(!cvv.match(numeric)){-->
+<!--            document.getElementById("cvva").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('cvv').innerHTML = "<%= I18n.t('payment_pages.digits_only') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else if(cvv.length <= 2 || cvv.length > 3){-->
+<!--            document.getElementById("cvva").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('cvv').innerHTML = "<%= I18n.t('payment_pages.invalid_cvv') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else{-->
+<!--            document.getElementById("cvva").setAttribute('style', "border-color:#4fa647 !important");-->
+<!--            document.getElementById('cvv').innerHTML = "";-->
+<!--            return_validation = true;-->
+<!--        }-->
+
+<!--        if ((card_number == null || card_number == "") && !paste_flag){-->
+<!--            document.getElementById("card_numbera").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('card_number').innerHTML = "<%= I18n.t('payment_pages.card_cant_blank') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else if(card_number.length > 16){-->
+<!--            document.getElementById("card_numbera").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('card_number').innerHTML = "<%= I18n.t('payment_pages.invalid_card_number') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            paste_flag = false;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else if(!card_number.match(/\d{4}(\d{4}){3}\b/)){-->
+<!--            document.getElementById("card_numbera").setAttribute('style', "border-color:red !important");-->
+<!--            document.getElementById('card_number').innerHTML = "<%= I18n.t('payment_pages.card_format') %>: 1234123412341234";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            paste_flag = false;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else{-->
+<!--            document.getElementById("card_numbera").setAttribute('style', "border-color:#4fa647 !important");-->
+<!--            document.getElementById('card_number').innerHTML = "";-->
+<!--            paste_flag = false;-->
+<!--            return_validation = true;-->
+<!--        }-->
+
+<!--        if (expiryMonth == null || expiryMonth == "" || expiryYear == null || expiryYear == ""){-->
+<!--            document.getElementById('expiration_date').innerHTML = "<%= I18n.t('payment_pages.select_month_year') %>";-->
+<!--            document.getElementById("submit_btn").disabled = true;-->
+<!--            return_validation = false;-->
+<!--        }-->
+<!--        else{-->
+<!--            document.getElementById('expiration_datea').value = expiryYear + expiryMonth;-->
+<!--            document.getElementById('expiration_date').innerHTML = "";-->
+<!--            return_validation = true;-->
+<!--        }-->
+        console.log('global_expiryMonth',global_expiryMonth.value)
+        console.log('global_expiryMonth',global_expiryMonth != null)
+        console.log('global_expiryMonth',global_expiryMonth != '')
+        console.log('global_expiryMonth',global_expiryMonth != undefined)
+        console.log('global_expiryMonth',global_expiryMonth.value.toString().length > 0)
+        if (global_card_holder_name.value && global_cvv.value && global_card_number.value && global_expiryMonth.value.toString().length > 0){
+            document.getElementById("submit_btn").disabled = !(validatename() && validatecvv() && validatenumber() && validatedate() && document.getElementById("accept_check_box").checked);
+        }
+        else{
+            document.getElementById("submit_btn").disabled = true;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

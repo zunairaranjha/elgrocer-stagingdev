@@ -1,0 +1,154 @@
+ar:
+  errors:
+    unauthorized: "غير مصرح"
+    employee_not_found: "Employee not found!"
+    already_login: "Already login on other device!"
+    invalid_credential: "Invalid credential!"
+    only_for_superuser: "Only Super User or Supervisor is allowed!"
+    order_not_found: "Order not found! "
+    update_to_latest: "Please update to latest version!"
+    only_for_employee: "Only Employee can process the order!"
+    order_status: "Order not in %{status} state!"
+    something_wrong: "Sorry Something went wrong!"
+    retailer_not_have_order: "You do not have this order!"
+    order_already_allocated: "Order is already allocated!"
+    order_already_in_substitution: "Order is already in substitution!"
+    employee_not_have_role: "Employee not have this role!"
+    status_not_appends: "Order status does not append!"
+    not_online_payment_no_card: "Could not capture either order is not with online payment or card not exist!"
+    already_captured: "Payment Already Captured!"
+    payment_failed: "Online Payment Failed due to %{reason}!"
+    slot_filled: "نأسف! لقد قام شخص آخر بحجز نفس وقت التوصيل، برجاء اختيار وقت آخر وشكرًا!"
+    card_not_found: "Credit card not found!"
+    not_have_payment_type: "Retailer do not consider this type of payment!"
+    payment_details_missing: "Merchant Reference or Auth Amount is missing!"
+    card_number_invalid: "رقم البطاقة غير صحيح!"
+    expiry_date_invalid: "تاريخ انتهاء الصلاحية غير صحيح!"
+    card_expired: "البطاقة منتهية الصلاحية!"
+    card_type_not_supported: "نوع البطاقة غير معتمد!"
+    technical_issue: "مشكلة فنية!"
+    card_delete_cancel_order: "الطلبات المقدمة بهذه البطاقة لم تتم معالجتها بعد ، إذا كنت تريد حذف البطاقة ، فسيتم إلغاء طلباتك بهذه البطاقة!"
+    not_allowed: "غير مسموح"
+    last_active_employee: "Sorry! Logout not possible, you are the last active employee."
+    retailer_not_found: "Retailer not found!"
+    only_shopper_can_change: "يمكن للمتسوق فقط التغيير"
+    params_missing: "البارامز في عداد المفقودين"
+    shopper_not_found: "Shopper not found!"
+    collector_not_found: "جامع غير موجود"
+    unable_to_process_request: "Unable to process request!"
+    vehicle_not_found: "Vehicle not found!"
+    shopper_address_not_found: "Shopper address not found!"
+    retailer_not_have_service: "Retailer not have this service!"
+    payment_type_invalid: "Payment type invalid!"
+    retailer_not_open_for_order: "Retailer must be open to place order!"
+    location_not_covered_retailer: "Location is not covered by this retailer!"
+    products_empty: "Could not place order with out products!"
+    shopper_address_id_missing: "Shopper address id is missing!"
+    value_not_enough: "Value is not enough to place order!"
+    invalid_promo: "رمز ترويجي غير صالح"
+    promo_expired: "انتهت مدة صلاحية كود الترويج!"
+    max_allowed_realizations: "تجاوز الحد الأقصى المسموح به للإنجازات!"
+    promo_not_for_retailer: "رمز الترويج هذا غير صالح لمتاجر التجزئة المختارة!"
+    promo_already_used: "كود الترويج مستخدم بالفعل!"
+    promotion_invalid_brands: "هذا الرمز الترويجي صالح فقط لـ %{brand_names} العلامات التجارية مع الحد الأدنى من سلة %{min_basket_value} د.إ."
+    payment_invalid_for_promo: "هذا الرمز الترويجي غير صالح لطريقة الدفع التي تم اختيارها. هل ترغب في تغيير طريقة الدفع؟"
+    promo_order_limit: "هذا الكود يَسري فقط اذا طلبت عدد %{order_limit} من الطلبات بالسابق"
+    promo_not_for_shopper: "هذا الكود يَسري فقط لطلبات شخص آخر"
+    promo_only_for_delivery: "هذا الكود لا يَسري على طلبات التوصيل"
+    promo_only_for_cnc: "هذا الكود لا يَسري على طلبات انقر واستلم"
+    delivery_slot_not_exist: "Delivery slot not exist!"
+    delivery_slot_invalid: "Invalid Delivery Slot!"
+    delivery_type_invalid: "Retailer not support this type of delivery!"
+    pickup_location_not_found: "Pickup location not found!"
+    shopper_not_have_order: "This order does not belongs to you!"
+    order_not_in_edit: "طلبك يتم تحضيره حاليًا بواسطة المتجر ولا يمكن تعديله. إذا كنت بحاجة إلى مساعدة عاجلة ، فيرجى الاتصال بالدعم المباشر"
+    order_with_address_not_processed: "Orders placed with this address are not processed yet!"
+    campaign_not_found: "الحملة غير موجودة!"
+    recipe_not_found: "الوصفة غير موجودة!"
+    invalid_zone: "منطقة التسليم غير صالحة!"
+    category_not_found: "Category not found!"
+    product_not_found: "Product not found!"
+    not_login: "You are not login!"
+    brand_not_found: "Brand not found!"
+    fraudster: "تم حظر الدفع الخاص بك بسبب احتمال وجود شبهة إحتيال على بطاقة الائتمان. يرجى الاتصال بخدمة العملاء إذا كان هذا خطأ!"
+    promo_code_exist: "Promotion already exist!"
+    value_must_be_greater: "Value must be greater than 0!"
+    end_must_be_greater: "End date must be greater than Start date!"
+    product_quantity_limit: "آسف! لدينا كمية %{qty} فقط متوفرة الآن"
+    products_limitd_stock: "آسف! لدينا مخزون محدود من بعض العناصر"
+    payment_issue: "%{message}"
+    invalid_reference: 'Invalid Reference'
+    product_missing: 'Product does not exist or its details are missing!'
+    shop_not_exist: 'Shop does not exist!'
+    low_smiles_balance: "ليس لديك ما يكفي من النقاط.الرجاء اختيار منتج بسعر مساوٍ أو بسعر أقل."
+    tib_001: 'Schema Errors'
+    tib_002: 'Input Validation Error'
+    tib_003: 'Runtime Errors'
+    tib_005: 'Loyalty Ext Connection TimeOut'
+    tib_999: 'Other Errors'
+    tib_loyalty_3111: 'External reference number should be unique'
+    tib_loyalty_4305: 'Invalid account to get pin.'
+    tib_loyalty_4316: 'Account is suspended.'
+    tib_loyalty_4321: 'Given account is blacklisted in smiles to send sms'
+    tib_loyalty_4502: 'Requested member information not found'
+    tib_loyalty_5101: 'Unauthorized user'
+    tib_loyalty_9057: 'Invalid username or pin'
+    tib_loyalty_9059: 'Invalid user'
+    tib_loyalty_9073: 'Account number and pin is mandatory'
+    invalid_pin: 'Your OTP is invalid'
+    otp_expired: "Your OTP has been expired please try with new one"
+    tib_loyalty_3142: "خطأ 3142: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3133: "خطأ 3133: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3105: "خطأ 3105: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3137: "خطأ 3137: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3126: "خطأ 3126: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3117: 'الرجاء تزويدنا برمز العضوية (أو) رقم الحساب (أو) معرف الولاء (ID). يرجى المحاولة مرة أخرى أو الاتصال بفريق الدعم.'
+    tib_loyalty_3110: "خطأ 3110: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3199: 'نأسف، لكن ليس لديك نقاط كافية مقابل قيمة الإنفاق.'
+    tib_loyalty_3104: "خطأ 3104: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3010: "خطأ 3010: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3124: "خطأ 3124: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3101: "خطأ 3101: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3130: "خطأ 3130: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3106: 'نأسف، لكن يبدو أن قيمة الإنفاق غير كافية للمتابعة. الرجاء محاولة إضافة المزيد من العناصر إلى عربة التسوق الخاصة بك.'
+    tib_loyalty_3141: "خطأ 3141: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3108: "خطأ 3108: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3114: "خطأ 3114: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3138: "خطأ 3138: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3118: "خطأ 3118: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3008: "خطأ 3008: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3131: "خطأ 3131: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3116: "خطأ 3116: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3128: "خطأ 3128: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3129: "خطأ 3129: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3170: "خطأ 3170: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3193: "خطأ 3193: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3140: "خطأ 3140: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3135: "خطأ 3135: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3132: "خطأ 3132: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3125: "خطأ 3125: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3123: "خطأ 3123: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3122: "خطأ 3122: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3120: "خطأ 3120: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_3119: "خطأ 3119: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5022: "خطأ 5022: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5042: "خطأ 5042: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5043: "خطأ 5043: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5040: "خطأ 5040: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5041: "خطأ 5041: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5127: "خطأ 5127: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5004: "خطأ 5004: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5005: 'نأسف، لكن لم يتم تفعيل عضويتك بعد. يرجى المحاولة مرة أخرى أو الاتصال بفريق الدعم.'
+    tib_loyalty_5056: 'نأسف، لكننا لا نستطيع العثور على عضويتك في برنامج الولاء. يرجى المحاولة مرة أخرى أو الاتصال بفريق الدعم.'
+    tib_loyalty_5007: 'نأسف، لكن لم يتم تفعيل حسابك بعد. يرجى المحاولة مرة أخرى أو الاتصال بفريق الدعم.'
+    tib_loyalty_5061: 'نأسف، لكننا لا نستطيع العثور على حسابك في برنامج الولاء. يرجى المحاولة مرة أخرى أو الاتصال بفريق الدعم.'
+    tib_loyalty_5078: "خطأ 5078: نأسف لحدوث هذا الخلل. الرجاء المحاولة مرة أخرى أو الاتصال بفريق الدعم."
+    tib_loyalty_5000: 'لقد تجاوزت عدد المحاولات المسموح بها. يرجى المحاولة مرة أخرى لاحقاً.'
+    tib_loyalty_5006: 'نأسف، لكن ليس لديك نقاط كافية لإتمام هذه المعاملة.'
+    tib_loyalty_5008: 'نأسف، لكن ليس لديك نقاط كافية لإتمام هذه المعاملة.'
+    phone_number_not_same: 'Phone number does not match'
+    substitution_or_proposal_missing: 'Substitution product or Proposal product is missing!'
+    order_cant_track_on_smiles: 'This order cant be track on smiles app'
+    is_valid_phone: 'Phone number is invalid'
+    shopper_registration_failed: 'Shopper Account Registration failed'
+    server_error: 'Smiles service unavailable. Please try again later.'

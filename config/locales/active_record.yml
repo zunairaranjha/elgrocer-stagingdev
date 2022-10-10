@@ -1,0 +1,84 @@
+en:
+  activerecord:
+    attributes:
+      retailer:
+        human_id: "Retailer ID"
+        company_name: Store name
+        company_name_ar: Store name ar
+        company_address: Store address
+        company_address_ar: Store address ar
+    messages:
+      order:
+        cancel: 'Unfortunately your order was canceled. Please, try in another store!'
+
+    labels:
+      commissions:
+        total_income: "Total commission collected"
+        current_month_income: "Total commission collected in current month"
+        commission_value: "Commission Value (%)"
+        commissions: "Commissions"
+        commission_exceptions: "Commission exceptions"
+        commission_value_exception: "Exceptional Commission Value (%)"
+      session:
+        last_sign_in_at: "Last login"
+        current_sign_in_at: "Current login"
+        sign_in_count: "Sign in count"
+      retailer:
+        company_name: "Name"
+        store_details: "Store Details"
+        retailer_details: Retailer Details
+        delivery_details: "Delivery details"
+        owner_details: "Store Owner Details"
+        manager_details: "Store Manager Details"
+        integration_level: "ElGrocer Integration Level"
+        additional_notes: "Additional notes"
+        store_reviews: "Store reviews"
+        available_payment_types: "Available Payment Types"
+        available_products: "Available Products"
+        delivery_zones: "Delivery Zones"
+        devices: "Devices"
+        products_imports: "Products' imports"
+        must_stock_list: "Must Stock List"
+      product:
+        product_in_shop: "Shops"
+        brand_name: "Brand name"
+        subcategory_name: "Subcategory name"
+        category_name: "Category name"
+      shop:
+        price_unit: "Price unit (e.g. 5 )"
+        price_fraction: "Price fraction (e.g. 50)"
+        products_in_shops: "Products in shops"
+        product_in_shop: "Product in shop"
+        basic_data: "Basic Data"
+        price_data: "Price"
+      shopper:
+        last_login: "Last login"
+        shopper_name: "Shopper name"
+      order:
+        order_history: "Order history"
+        total_price: "Total price"
+        retailer_company_name: "Retailer name"
+        shopper_name: "Shopper name"
+        date: "Date"
+        message: "Rejection message"
+      locations:
+        name: "Name"
+        delivery_zone: "Delivery zone"
+        min_basket_value: "Minimal basket value"
+        credit_card_on_delivery: "Credit Card on delivery"
+        cash_on_delivery: "Cash on delivery"
+        online_payment: "Online Payment"
+        smiles_points: "Smiles Points"
+      user:
+        created_at: "Registration date"
+        email: "Email"
+      promotion_code:
+        start_date: 'Start date'
+        end_date: 'End date'
+        value: 'Value (in fils, 1 dirham = 100 fils)'
+        value_index: 'Value - Dirham'
+        code: 'Code'
+        allowed_realizations: 'Allowed realizations (0 = unlimited)'
+        realizations_per_shopper: 'Allowed realization by shopper (1 default)'
+        realizations_per_retailer: 'Allowed realization in one retailer (1 default)'
+        retailers: 'Retailers (stores where code should be valid)'

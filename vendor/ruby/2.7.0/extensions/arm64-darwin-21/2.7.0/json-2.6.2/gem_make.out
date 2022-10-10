@@ -1,0 +1,13 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/json-2.6.2/ext/json
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/json-2.6.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-145vbos sitelibdir\=./.gem.20221005-97445-145vbos clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/json-2.6.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-145vbos sitelibdir\=./.gem.20221005-97445-145vbos
+make: Nothing to be done for `all'.
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/json-2.6.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-145vbos sitelibdir\=./.gem.20221005-97445-145vbos install

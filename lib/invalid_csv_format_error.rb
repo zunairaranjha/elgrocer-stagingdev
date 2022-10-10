@@ -1,0 +1,2 @@
+class InvalidCsvFormatError < StandardError
+end

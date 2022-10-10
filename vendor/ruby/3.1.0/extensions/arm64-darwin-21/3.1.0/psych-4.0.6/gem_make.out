@@ -1,0 +1,21 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/psych-4.0.6/ext/psych
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+checking for yaml.h... yes
+checking for yaml_get_version() in -lyaml... yes
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/psych-4.0.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-dgescd sitelibdir\=./.gem.20221005-11094-dgescd clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/psych-4.0.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-dgescd sitelibdir\=./.gem.20221005-11094-dgescd
+compiling psych.c
+compiling psych_emitter.c
+compiling psych_parser.c
+compiling psych_to_ruby.c
+compiling psych_yaml_tree.c
+linking shared-object psych.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/psych-4.0.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-dgescd sitelibdir\=./.gem.20221005-11094-dgescd install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 psych.bundle ./.gem.20221005-11094-dgescd

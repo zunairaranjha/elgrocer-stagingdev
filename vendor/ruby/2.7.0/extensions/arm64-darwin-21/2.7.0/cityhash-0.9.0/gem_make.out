@@ -1,0 +1,16 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/cityhash-0.9.0/ext/cityhash
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/cityhash-0.9.0/ext/cityhash
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-zmkjcv sitelibdir\=./.gem.20221005-89237-zmkjcv clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/cityhash-0.9.0/ext/cityhash
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-zmkjcv sitelibdir\=./.gem.20221005-89237-zmkjcv
+compiling city.cc
+compiling cityhash.cc
+linking shared-object cityhash/cityhash.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/cityhash-0.9.0/ext/cityhash
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-zmkjcv sitelibdir\=./.gem.20221005-89237-zmkjcv install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cityhash.bundle ./.gem.20221005-89237-zmkjcv/cityhash

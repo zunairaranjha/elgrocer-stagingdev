@@ -1,0 +1,298 @@
+<!doctype html>
+<html dir="auto" lang=<%= I18n.locale %>>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+      body {
+          margin: 0;
+          background-color: #f2f2f2;
+      }
+
+      body, td, th {
+          font-family: Helvetica, Arial, sans-serif;
+          font-style: normal;
+          font-weight: normal;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+          font-family: Helvetica, Arial, sans-serif;
+          font-weight: normal;
+          padding: 0;
+          margin: 0;
+      }
+
+      h5 {
+          font-size: 12px;
+      }
+
+  </style>
+</head>
+
+<body>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" style="border:solid 1px #D8D8D8;">
+  <tbody <%#= @align = I18n.locale.to_s.downcase.eql?('en') ? 'right' : 'left' %>>
+
+  <tr bgcolor="#05BC66">
+    <td align="center" style="padding:20px 0px;">
+      <%# if I18n.locale.to_s.downcase.eql?('ar') %>
+        <%#= image_tag 'logo_4.png', width: '150', height: 'auto', alt: '' %>
+      <%# else %>
+        <%= image_tag 'elGrocerBySmiles-logo.png', width: '150', height: 'auto', alt: '' %>
+      <%# end %>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF" style="padding:0px 20px;">
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+          <td height="20">&nbsp;</td>
+        </tr>
+        <!--
+              <tr>
+                <td align= <%= I18n.locale.to_s.downcase.eql?('en') ? 'right' : 'left' %>><%= image_tag 'logo_2.png', size: "145x31", alt: '' %></td>
+              </tr>
+              -->
+        <tr>
+          <td><h5><%= I18n.t("order_placement.dear", name: @shopper.name) %></h5></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><h5><%= I18n.t("order_placement.thanks_order") %><br>
+            <br>
+          </h5>
+            <h5><%= I18n.t("order_placement.order_dispatched", company_name: @retailer.company_name) %></h5></td>
+        </tr>
+        <tr>
+          <td><h5>&nbsp;</h5></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+              <% if @retailer.send_tax_invoice && @order.status_id.positive? %>
+                <tr>
+                  <td width="20%" height="20"><h5><%= I18n.t("order_placement.trn") %></h5></td>
+                  <td width="80%"><h5><strong><%= SystemConfiguration.get_key_value('trn_number') %></strong></h5></td>
+                </tr>
+                <tr>
+                  <td width="20%" height="20"><h5><%= I18n.t("order_placement.trn_invoice") %></h5></td>
+                  <td width="80%"><h5>
+                    <strong><%= @inv_no %></strong>
+                  </h5></td>
+                </tr>
+                <tr>
+                  <td width="20%" height="20"><h5><%= I18n.t("order_placement.trn_invoice_date") %></h5></td>
+                  <td width="80%"><h5>
+                    <strong><%= I18n.locale.to_s.downcase.eql?('en') ? Time.now.strftime('%d %b %Y') : "#{Time.now.strftime('%d')} #{I18n.t("month.#{Time.now.strftime('%B')}")} #{Time.now.strftime('%Y')}"%></strong>
+                  </h5></td>
+                </tr>
+              <% end %>
+              <tr>
+                <td width="20%" height="20"><h5><%= I18n.t("order_placement.time") %></h5></td>
+                <td width="80%"><h5>
+                  <strong><%= I18n.locale.to_s.downcase.eql?('en') ? @orderTime.gsub('AM', ' AM').gsub('PM', ' PM') : @orderTime.to_s.gsub('AM', ' صباحا').gsub('PM', ' مساء') %></strong>
+                </h5></td>
+              </tr>
+              <tr>
+                <td width="20%" height="20"><h5><%= I18n.t("order_placement.order_no") %></h5></td>
+                <td width="80%"><h5><strong>ORN<%= @order.id %></strong></h5></td>
+              </tr>
+              <tr>
+                <td width="20%" height="20"><h5><%= I18n.t("order_placement.delivery_address") %></h5></td>
+                <td width="80%"><h5>
+                  <strong><%= @order.shopper_address_apartment_number %>, <%= @order.shopper_address_building_name %>
+                    , <%= @order.shopper_address_street %>, <%= @order.shopper_address_area %></strong></h5></td>
+              </tr>
+              <tr>
+                <td width="20%" height="20"><h5><%= I18n.t("order_placement.payment") %></h5></td>
+                <td width="80%"><h5>
+                  <strong><%= I18n.t("order_placement." + @order.payment_type.parameterize(separator: '_')) %> <%= I18n.t("order_placement.total") %>
+                    : <%= @order.total_price + @order.price_variance.to_f %> <%= I18n.t("order_placement." + @order.price_currency.downcase) %></strong>
+                </h5></td>
+              </tr>
+              <% if @order.delivery_slot_id.present? %>
+                <tr>
+                  <td width="20%" height="20"><h5><%= I18n.t("order_placement.schduled") %></h5></td>
+                  <td width="80%"><h5>
+                    <strong><%= I18n.locale.to_s.downcase.eql?('en') ? @order.schedule_for : @order.schedule_for.to_s.gsub('AM', 'صباحا').gsub('PM', 'مساء') %></strong>
+                  </h5></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><h5>&nbsp;</h5></td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+        <tbody <%#= @dir = I18n.locale.to_s.downcase.eql?('en') ? 'ltr' : 'rtl' %>>
+        <tr bgcolor="#05BC66" style="color:#FFFFFF">
+          <td height="50" width="10%" style="padding:0px 20px;"><h5>&nbsp;</h5></td>
+          <td width="45%"><h5><strong><%= I18n.t("order_placement.product") %></strong></h5></td>
+          <td width="15%" align="center"><h5><strong><%= I18n.t("order_placement.quantity") %></strong></h5></td>
+          <td width="15%" align="center"><h5><strong><%= I18n.t("order_placement.price") %><br>
+            (<%= I18n.t("order_placement." + @order.price_currency.downcase) %>)</strong></h5></td>
+          <td width="15%" align="center" style="padding:0px 20px;">
+            <h5><strong><%= I18n.t("order_placement.total") %><br>
+              (<%= I18n.t("order_placement." + @order.price_currency.downcase) %>)</strong></h5></td>
+        </tr>
+        <tr>
+          <td style="padding:0px 20px;">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td style="padding:0px 20px;">&nbsp;</td>
+        </tr>
+        <% @order.order_positions.includes(:product).each do |order_p| %>
+          <tr>
+            <td height="50" style="border-bottom:1px solid #D8D8D8; padding:0px 20px;">
+              <% if order_p.product_id.to_i.positive? %>
+                <h5><%= image_tag order_p.product.try(:icon_url).to_s %></h5>
+              <% else %>
+                <h5><%= image_tag order_p.product_proposal&.photo_url(:icon_url).to_s %></h5>
+              <% end %>
+            </td>
+            <td style="border-bottom:1px solid #D8D8D8;"><h5><%= order_p.product_name %><br>
+              <% if order_p.product_size_unit.present? %>
+                <br>
+                <%= order_p.product_size_unit %>
+              <% end %>
+            </h5></td>
+            <td align="center" style="border-bottom:1px solid #D8D8D8;"><h5><%= order_p.amount.to_s + ' x' %></h5></td>
+            <td align="center" style="border-bottom:1px solid #D8D8D8;"><h5><%= order_p.unit_price %></h5></td>
+            <td align="center" style="border-bottom:1px solid #D8D8D8; padding:0px 20px;">
+              <h5><%= order_p.full_price %></h5></td>
+          </tr>
+        <% end %>
+        <tr style="color: #05BC66">
+          <td height="50" width="80%" colspan="4" bgcolor="#FFFFFF" style="padding:0px 20px;">
+            <h5><strong><%= I18n.t("order_placement.total") %> : </strong></h5></td>
+          <td height="50" width="20%" align="center" bgcolor="#FFFFFF" style="padding:0px 20px;"><h5>
+            <strong><%= @order.total_value %>  <%= I18n.t("order_placement." + @order.price_currency.downcase) %></strong>
+          </h5></td>
+        </tr>
+        <tr>
+          <td height="50" colspan="4" bgcolor="#FFFFFF" style="padding:0px 20px;">
+            <h5><strong><%= I18n.t("order_placement.service_fee") %></strong></h5></td>
+          <td height="50" align="center" bgcolor="#FFFFFF" style="padding:0px 20px;"><h5>
+            <strong><%= @order.total_services_fee %>  <%= I18n.t("order_placement." + @order.price_currency.downcase) %></strong>
+          </h5></td>
+        </tr>
+        <tr>
+          <td height="50" colspan="4" bgcolor="#FFFFFF" style="padding:0px 20px;">
+            <h5><strong><%= I18n.t("order_placement.vat", vat: @order.vat) %></strong></h5></td>
+          <td height="50" align="center" bgcolor="#FFFFFF" style="padding:0px 20px;"><h5>
+            <strong><%= @order.total_vat %>  <%= I18n.t("order_placement." + @order.price_currency.downcase) %></strong>
+          </h5></td>
+        </tr>
+        <% if @order.promotion_code_realization.present? %>
+          <tr style="color: #05BC66">
+            <td height="50" colspan="4" bgcolor="#FFFFFF" style="padding:0px 20px;"><h5>
+              <strong><%= I18n.t("order_placement.promo_code", promo: @order.promotion_code_realization.promotion_code.code) %></strong>
+            </h5></td>
+            <td height="50" align="center" bgcolor="#FFFFFF" style="padding:0px 20px;"><h5>
+              <strong><%= @order.promotion_discount %>  <%= I18n.t("order_placement." + @order.price_currency.downcase) %></strong>
+            </h5></td>
+          </tr>
+        <% end %>
+        <% if @order.price_variance.to_f > 0.0 %>
+          <tr style="color: #05BC66">
+            <td height="50" colspan="4" bgcolor="#FFFFFF" style="padding:0px 20px;">
+              <h5><strong><%= I18n.t("order_placement.variance") %></strong></h5></td>
+            <td height="50" align="center" bgcolor="#FFFFFF" style="padding:0px 20px;"><h5>
+              <strong><%= @order.price_variance %>  <%= I18n.t("order_placement." + @order.price_currency.downcase) %></strong>
+            </h5></td>
+          </tr>
+        <% end %>
+        <% if @order.payment_type_id != 4 && @orders_datum&.detail.to_h['smile_accrual_points'].present? %>
+          <tr style="color: #05BC66">
+            <td height="50" colspan="4" bgcolor="#FFFFFF" style="padding:0px 20px;">
+              <h5><strong><%= I18n.t("order_placement.smile_earn") %></strong></h5></td>
+            <td height="50" align="center" bgcolor="#FFFFFF" style="padding:0px 20px;"><h5>
+              <strong><%= @orders_datum.detail['smile_accrual_points'].to_h.values.sum %></strong>
+            </h5></td>
+          </tr>
+        <% end %>
+        <% if @order.payment_type_id == 4 && !@orders_datum&.detail.to_h['transaction_ref_ids'].blank? %>
+          <tr style="color: #05BC66">
+            <td height="50" colspan="4" bgcolor="#FFFFFF" style="padding:0px 20px;">
+              <h5><strong><%= I18n.t("order_placement.smile_burn") %></strong></h5></td>
+            <td height="50" align="center" bgcolor="#FFFFFF" style="padding:0px 20px;"><h5>
+              <strong><%= @orders_datum.detail['transaction_ref_ids'].to_h.values.sum %></strong>
+            </h5></td>
+          </tr>
+        <% end %>
+        <tr style="color: #000">
+          <td height="50" colspan="4" bgcolor="#F2F2F2" style="padding:0px 20px;">
+            <h5><strong><%= I18n.t("order_placement.final_bill") %></strong></h5></td>
+          <td height="50" align="center" bgcolor="#F2F2F2" style="padding:0px 20px;"><h5>
+            <strong><%= @order.total_price + @order.price_variance.to_f %>  <%= I18n.t("order_placement." + @order.price_currency.downcase) %></strong>
+          </h5></td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="50" bgcolor="#05BC66" style="padding:0px 20px;">
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+          <td style="color:#ffffff"><h5><strong><%= I18n.t("order_placement.query") %>></strong></h5>
+            <h5>- <%= I18n.t("order_placement.mail_us") %>>
+              <a href="mailto:support@elgrocer.com">support@elgrocer.com</a><br>
+              <!-- - Call us: +971 4 452 8367<br> -->
+              - <%= I18n.t("order_placement.talk_us") %>></h5></td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="80" bgcolor="#FFFFFF" style="padding:0px 20px;">
+      <table width="75%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+          <td align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center"><h5><%= I18n.t("order_placement.follow_us") %></h5></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center">
+            <a href="https://www.facebook.com/elgrocer/"><%= image_tag 'emails/facebook.png', size: "33x33", alt: '' %></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://twitter.com/elgrocer"><%= image_tag 'emails/twitter.png', size: "33x33", alt: '' %></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://instagram.com/elgrocer/"><%= image_tag 'emails/instagram.png', size: "33x33", alt: '' %></a>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
+

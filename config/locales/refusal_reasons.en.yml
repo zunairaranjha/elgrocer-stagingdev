@@ -1,0 +1,42 @@
+en:
+  refusal_reasons:
+    refusalReason_0: "We're sorry, something went wrong and we are unable to process the payment. Please try again. If the problem persists please contact customer service live chat from the profile."
+    refusalReason_1: '-'
+    refusalReason_2: "We're sorry, the transaction was declined by your bank. Please try a different payment or contact your bank."
+    refusalReason_3: "We're sorry, the transaction was declined by your bank. Please try a different payment or contact your bank."
+    refusalReason_4: "We're sorry, the transaction did not go through by the acquirer end. Please try again or contact your bank."
+    refusalReason_5: "We're sorry, the card used for the transaction is blocked. Please try a new card or change payment method."
+    refusalReason_6: 'The card expiry date you have entered is incorrect. Please correct the details and try again.'
+    refusalReason_7: "We're sorry, transaction amount you are trying to process is invalid or exceeds the allowed amount. Please try again. If the problem persists please contact our customer service live chat from the profile."
+    refusalReason_8: 'The card details you have entered are incorrect. Please correct the details and try again.'
+    refusalReason_9: "We're sorry, something went wrong and we are unable to process the payment. Please try again. If the problem persists please contact customer service live chat from the profile."
+    refusalReason_10: "We're sorry, your bank does not support or does not allow this type of transaction. Please try a new card or change payment method."
+    refusalReason_11: "We're sorry, the 3D Secure Authentication was not executed successfully. Please try again or contact your bank."
+    refusalReason_12: "We're sorry, the transaction was declined by your bank as the card doesn't have sufficient funds. Please try a different payment."
+    refusalReason_13: '-'
+    refusalReason_14: "We're sorry, the transaction was declined by your bank. Please try a different payment or contact your bank."
+    refusalReason_15: "We're sorry, the transaction was cancelled. Please try a new card or change payment method."
+    refusalReason_16: "We're sorry, but it seems the transaction was cancelled by you. Please try again."
+    refusalReason_17: "We're sorry, the transaction was declined by your bank as you have entered an incorrect PIN. Please try a different payment or contact your bank."
+    refusalReason_18: "We're sorry the transaction was declined by your bank as you have tried an incorrect PIN more than the available limit. Please try a different payment or contact your bank."
+    refusalReason_19: "We're sorry, the transaction was declined by your bank as you have entered an incorrect PIN. Please try a different payment or contact your bank."
+    refusalReason_20: "We're sorry, the transaction was declined by your bank. Please try a different payment or contact your bank."
+    refusalReason_21: "We're sorry, the transaction was not submitted correctly for processing. Please try again or change payment method."
+    refusalReason_22: "We're sorry, the transaction was declined by your bank. Please try a different payment or contact your bank."
+    refusalReason_23: "We're sorry, the transaction was declined by your bank because your card cannot be used for online purchases. Please try a different payment or contact your bank."
+    refusalReason_24: 'The card CVC you have entered is incorrect. Please correct the details and try again.'
+    refusalReason_25: "We're sorry, the transaction was declined by your bank because your card cannot be used for online purchases. Please try a different payment or contact your bank."
+    refusalReason_26: "We're sorry, the transaction was declined by your bank. Please try a different payment or contact your bank. "
+    refusalReason_27: "We're sorry, the transaction was declined by your bank. Please try a different payment or contact your bank."
+    refusalReason_28: "We're sorry, the transaction was declined by your bank because the card has exceeded its withdrawal limit. Please try a different payment or contact your bank."
+    refusalReason_29: "We're sorry, the transaction was declined by your bank because the card has exceeded its withdrawal count limit. Please try a different payment or contact your bank. "
+    refusalReason_30: '-'
+    refusalReason_31: "We're sorry, the transaction was declined by your bank. Please try a different payment or contact your bank."
+    refusalReason_32: "We're sorry, your AVS is declined. Please try a different card or contact your bank."
+    refusalReason_33: "We're sorry, your bank refused the transaction because the card requires you to enter an online pin. If you are unable to input the PIN, please try a different payment method or contact your bank."
+    refusalReason_34: "We're sorry, the transaction was declined by your bank and your account type is not allowed for online payments. Please try a different payment or contact your bank."
+    refusalReason_35: "We're sorry, the transaction was declined by your bank and your account type is not allowed for online payments. Please try a different payment or contact your bank."
+    refusalReason_36: "We're sorry, the transaction was declined because your bank requires to enter your mobile PIN. Please try again or contact your bank."
+    refusalReason_37: "We're sorry, but the transaction was declined because it appears that you abandoned it after attempting a contactless payment and being prompted to try another card entry method (PIN or swipe)."
+    refusalReason_38: "We're sorry, your bank declined the authentication exemption request and requires authentication for the transaction. Please retry with 3D Secure or contact your bank."
+    refusalReason_39: "We're sorry, your card issuer / bank wasn't able to communicate the outcome via RReq. Please try a different payment method or contact your bank."

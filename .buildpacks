@@ -1,0 +1,3 @@
+https://github.com/diowa/heroku-buildpack-rgeo-prep.git
+https://github.com/peterkeen/heroku-buildpack-vendorbinaries.git
+heroku/ruby

@@ -1,0 +1,475 @@
+<html class=<%= @extra_params[:locale] %> dir=<%= @extra_params[:locale].to_s.downcase.eql?('ar') ? 'rtl' : 'ltr' %> lang=<%= @extra_params[:locale] %>>
+<%
+  requestParams = {'service_command' => "TOKENIZATION", 'access_code' => ENV['PAYFORT_ACCESS_CODE'], 'merchant_identifier' => ENV['MERCHANT_IDENTIFIER'], 'merchant_reference' => @extra_params[:merchant_reference], 'language' => @extra_params[:locale], 'return_url' => ENV["BASE_URL"] + online_payments_tokenization_response_path, 'merchant_extra' => @extra_params[:client_ip], 'merchant_extra1' => @extra_params[:email], 'merchant_extra2' => @extra_params[:web_url], 'merchant_extra3' => @extra_params[:date_time_offset]}
+  @signature = Digest::SHA2.hexdigest(ENV['SHA_REQUEST_PHRASE'] + requestParams.sort_by { |key| key }.map { |key, value| key + '=' + value }.join + ENV['SHA_REQUEST_PHRASE'])
+%>
+
+<% content_for :head do %>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <style type="text/css">
+      :root {
+          --color__accent: #6200ee;
+
+          --field__background: #f5f5f5;
+          --input__border: rgba(0, 0, 0, 0.42);
+          --input__border--hover: rgba(0, 0, 0, 0.62);
+          --label__color: #222;
+
+          --font__size: 14px;
+          --font__family: Roboto, Arial, sans-serif;
+      }
+
+      .form {
+          margin-top: 20px;
+      }
+
+      .floating {
+          margin-bottom: 1.5rem;
+          transition: background-color 0.2s ease;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+      }
+
+      .floating:hover,
+      .floating:focus-within {
+          background-color: var(--field__background--hover);
+      }
+
+      .floating__input {
+          padding: 1.8rem 1rem 0.6rem !important;
+          font-size: 1rem !important;
+          transition: border-color 0.2s ease;
+          caret-color: var(--color__accent);
+          outline: none !important;
+          background: #F5F5F5;
+          border-radius: 8px !important;
+          border: 1px solid #F5F5F5 !important;
+          width: 100% !important;
+      }
+
+      .floating:hover .floating__input {
+          border-color: var(--input__border--hover);
+          border: 1px solid #59AA46;
+      }
+
+      .floating__input::placeholder {
+          color: rgba(0, 0, 0, 0);
+      }
+
+      .floating__label {
+          display: block;
+          position: relative;
+          max-height: 0;
+          font-weight: 500;
+          pointer-events: none;
+      }
+
+      .floating__label::before {
+          color: var(--label__color);
+          content: attr(data-content);
+          display: inline-block;
+          filter: blur(0);
+          backface-visibility: hidden;
+          transform-origin: left top;
+          transition: transform 0.2s ease;
+          left: 1rem;
+          position: relative;
+          color: #656565;
+      }
+
+      .ar .floating__label::before {
+          left: -1rem;
+      }
+
+      .floating__label::after {
+          bottom: 1rem;
+          content: "";
+          height: 0.1rem;
+          position: absolute;
+          transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+          opacity: 0;
+          left: 0;
+          top: 100%;
+          margin-top: -0.1rem;
+          transform: scale3d(0, 1, 1);
+          width: 100%;
+      }
+
+      .floating__input:focus + .floating__label::after {
+          transform: scale3d(1, 1, 1);
+          opacity: 1;
+      }
+
+      .floating__input:placeholder-shown + .floating__label::before {
+          transform: translate3d(0, -2.2rem, 0) scale3d(1, 1, 1);
+      }
+
+      .floating__label::before,
+      .floating__input:focus + .floating__label::before {
+          transform: translate3d(0, -3.12rem, 0) scale3d(0.82, 0.82, 1);
+      }
+
+      .input_left, .input_right {
+          display: inline-block;
+          width: 48%;
+      }
+
+      .input_left {
+          margin-right: 2%;
+      }
+
+      .ar .input_left {
+          margin-right: 0 !important;
+          margin-left: 2% !important;
+      }
+
+      .ar .input_right {
+          display: inline-block;
+          width: 48% !important;
+      }
+
+      .floating span {
+          color: red;
+          position: absolute;
+      }
+
+      /* ---------------------------------------------- */
+      /* --  Codepen styles & resets - not required  -- */
+      /* ---------------------------------------------- */
+
+      body {
+          max-width: 40rem;
+          margin: 0 auto;
+          padding: 0 15px;
+          font-family: var(--font__family);
+          font-size: var(--font__size);
+          font-weight: 400;
+      }
+
+      input {
+          background: none;
+          border-width: 0;
+          display: block;
+          width: 100%;
+      }
+
+      html {
+          box-sizing: border-box;
+          background: #fff !important;
+          height: auto;
+          min-height: auto;
+      }
+
+      *,
+      *:before,
+      *:after {
+          box-sizing: inherit;
+      }
+
+      .hidden--visually {
+          border: 0;
+          clip: rect(1px 1px 1px 1px);
+          clip: rect(1px, 1px, 1px, 1px);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+      }
+
+  </style>
+<% end %>
+
+<div class="creditCardForm" oninput="validateform()">
+  <form id="add_new_credit_card" class="add_new_credit_card" method="post" name="card_form" action=<%= "#{ENV['PAYFORT_CHECKOUT_URL']}" %>>
+    <div class="form">
+
+      <div class="floating">
+        <input class="floating__input" id="card_holder_namea" name="card_holder_name" type="text" onfocusout="validatename()" oninput="validatename()" placeholder="<%= I18n.t('payment_pages.name_on_card') %>">
+        <label for="input__cardholdername" class="floating__label" data-content="<%= I18n.t("payment_pages.name_on_card") %>"><span class="hidden--visually"></span></label>
+        <span id="card_holder_name" class="error_msg"></span>
+      </div>
+
+      <div class="floating">
+        <input class="floating__input" id="card_numbera" type="text" name="card_number" pattern="\d*" placeholder="<%= I18n.t('payment_pages.card_number') %>"
+               maxlength="16" oninput="maxLengthCheck(this)" onfocusout="validatenumber()"
+               onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+        <label for="input__username" class="floating__label" data-content="<%= I18n.t('payment_pages.card_number') %>"><span class="hidden--visually"></span></label>
+        <span id="card_number" class="error_msg"></span>
+      </div>
+
+      <div class="floating">
+        <div class="input_left">
+          <input id="expiration_datea" type="text" class="floating__input" pattern="\d*" placeholder="Expiry (MM/YY)" onfocusout="validatedate()" oninput="validatedate()" onkeyup="formatString(event);"
+                 maxlength="5"/>
+          <label for="input__cvva" class="floating__label" data-content="<%= I18n.t('payment_pages.expiry_date') %>"><span class="hidden--visually"></span></label>
+          <span id="expiration_date" class="error_msg"></span>
+        </div>
+        <div hidden>
+          <input id="expiry_date" class="floating__input" name="expiry_date" type="text"/>
+        </div>
+        <div class="input_right">
+          <input class="floating__input" id="cvva" name="card_security_code" inputmode="numeric" maxlength="3" type="password" pattern="\d*" onfocusout="validatecvv()" placeholder="<%= I18n.t('payment_pages.cvv') %>"
+                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');validatecvv()">
+          <label for="input__cvv" class="floating__label" data-content="<%= I18n.t('payment_pages.cvv') %>"><span class="hidden--visually"></span></label>
+          <span id="cvv" class="error_msg"></span>
+        </div>
+      </div>
+
+      <div id="loader" style="position:fixed;top:0px;background: rgba(0,0,0,.3);width: 100%;left:0;height:100%;text-align:center; display: none">
+        <input type="hidden" name='service_command' value="TOKENIZATION">
+        <input type="hidden" name='access_code' value=<%= ENV["PAYFORT_ACCESS_CODE"] %>>
+        <input type="hidden" name='merchant_identifier' value=<%= ENV["MERCHANT_IDENTIFIER"] %>>
+        <input type="hidden" name='merchant_reference' value=<%= @extra_params[:merchant_reference] %>>
+        <input type="hidden" name='language' value=<%= @extra_params[:locale] %>>
+        <input type="hidden" name='signature' value=<%= @signature %>>
+        <input type="hidden" name='return_url' value=<%= ENV["BASE_URL"] + online_payments_tokenization_response_path %>>
+        <input type="hidden" name='merchant_extra' value=<%= @extra_params[:client_ip] %>>
+        <input type="hidden" name='merchant_extra1' value=<%= @extra_params[:email] %>>
+        <input type="hidden" name='merchant_extra2' value=<%= @extra_params[:web_url] %>>
+        <input type="hidden" name='merchant_extra3' value=<%= @extra_params[:date_time_offset] %>>
+<!--        <img style="top: 50%;margin-left:-30px; position: absolute;" src="https://elgrocer-data.s3.us-east-2.amazonaws.com/elgrocer/loading.gif">-->
+      </div>
+    </div>
+  </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    var global_card_holder_name = document.getElementById("card_holder_namea");
+    var global_name_error = document.getElementById('card_holder_name');
+    var global_cvv = document.getElementById("cvva");
+    var global_cvv_error = document.getElementById('cvv');
+    var global_card_number = document.getElementById("card_numbera");
+    var global_card_error = document.getElementById('card_number');
+    var global_expiryDate = document.getElementById("expiration_datea");
+    var global_expiryDate_error = document.getElementById('expiration_date');
+    var native_app;
+
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+    if (isAndroid) {
+        $(function () {
+            $('#cvva').attr('inputmode', 'numeric');
+            $('#expiration_datea').attr('inputmode', 'numeric');
+            $('#card_numbera').attr('inputmode', 'numeric').attr('onkeyup', 'numberMobile(event)');
+        });
+    }
+
+    function numberMobile(e) {
+        e.target.value = e.target.value.replace(/[^\d]/g, '');
+        return false;
+    }
+
+    function formatString(e) {
+        var inputChar = String.fromCharCode(event.keyCode);
+        var code = event.keyCode;
+        var allowedKeys = [8];
+        if (allowedKeys.indexOf(code) !== -1) {
+            return;
+        }
+
+        event.target.value = event.target.value.replace(
+            /^([1-9]\/|[2-9])$/g, '0$1/' // 3 > 03/
+        ).replace(
+            /^(0[1-9]|1[0-2])$/g, '$1/' // 11 > 11/
+        ).replace(
+            /^([0-1])([3-9])$/g, '0$1/$2' // 13 > 01/3
+        ).replace(
+            /^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2' // 141 > 01/41
+        ).replace(
+            /^([0]+)\/|[0]+$/g, '0' // 0/ > 0 and 00 > 0
+        ).replace(
+            /[^\d\/]|^[\/]*$/g, '' // To allow only digits and `/`
+        ).replace(
+            /\/\//g, '/' // Prevent entering more than 1 `/`
+        );
+    }
+
+
+    function handlePaste(e) {
+        var clipboardData, pastedData;
+
+        // Stop data actually being pasted into div
+        //e.stopPropagation();
+        //e.preventDefault();
+
+        // Get pasted data via clipboard API
+        clipboardData = e.clipboardData || window.clipboardData;
+        pastedData = clipboardData.getData('Text');
+
+        // Do whatever with pasteddata
+        paste_flag = true
+        var card_number = document.card_form.card_number.value;
+        // console.log("This", pastedData)
+        if (pastedData.length > 16) {
+            //alert("Card Number must be at least 16 characters long.");
+            global_card_number.setAttribute('style', "border-color:red !important");
+            global_card_error.innerHTML = "<%= I18n.t('payment_pages.invalid_card_number') %>";
+            call_native_app(false);
+            return false;
+        } else if (!pastedData.match(/^[0-9]+$/)) {
+            global_card_number.setAttribute('style', "border-color:red !important");
+            global_card_error.innerHTML = "<%= I18n.t('payment_pages.invalid_card_number') %>";
+            call_native_app(false);
+            return false;
+        } else {
+            global_card_number.setAttribute('style', "border-color:#4fa647 !important");
+            global_card_error.innerHTML = "";
+        }
+        return true;
+    }
+
+    document.getElementById('card_numbera').addEventListener('paste', handlePaste);
+    var paste_flag = false;
+
+    function maxLengthCheck(object) {
+        if (object.value.length > object.maxLength) {
+            object.value = object.value.slice(0, object.maxLength);
+        }
+        validatenumber()
+    }
+
+    function validatename() {
+        var card_holder_name = document.card_form.card_holder_name.value;
+        var holderName = /^[A-Za-z-.' ]+$/;
+        if (card_holder_name == null || card_holder_name == "") {
+            global_card_holder_name.setAttribute('style', "border-color:red !important");
+            global_name_error.innerHTML = "<%= I18n.t('payment_pages.name_cant_blank') %>";
+            call_native_app(false);
+            return false;
+        } else if (!card_holder_name.match(holderName)) {
+            global_card_holder_name.setAttribute('style', "border-color:red !important");
+            global_name_error.innerHTML = "<%= I18n.t('payment_pages.letters_only') %>";
+            call_native_app(false);
+            return false;
+        } else if (card_holder_name.length < 3 || card_holder_name.length > 150) {
+            global_card_holder_name.setAttribute('style', "border-color:red !important");
+            global_name_error.innerHTML = "<%= I18n.t('payment_pages.invalid_name') %>";
+            call_native_app(false);
+            return false;
+        } else {
+            global_card_holder_name.setAttribute('style', "border-color:#4fa647 !important");
+            global_name_error.innerHTML = "";
+            return true;
+        }
+    }
+
+    function validatecvv() {
+        var cvv = document.card_form.card_security_code.value;
+        var numeric = /^[0-9]+$/;
+        if (cvv == null || cvv == "") {
+            global_cvv.setAttribute('style', "border-color:red !important");
+            global_cvv_error.innerHTML = "<%= I18n.t('payment_pages.cvv_cant_blank') %>";
+            call_native_app(false);
+            return false;
+        } else if (!cvv.match(numeric)) {
+            global_cvv.setAttribute('style', "border-color:red !important");
+            global_cvv_error.innerHTML = "<%= I18n.t('payment_pages.digits_only') %>";
+            call_native_app(false);
+            return false;
+        } else if (cvv.length <= 2 || cvv.length > 3) {
+            global_cvv.setAttribute('style', "border-color:red !important");
+            global_cvv_error.innerHTML = "<%= I18n.t('payment_pages.invalid_cvv') %>";
+            call_native_app(false);
+            return false;
+        } else {
+            global_cvv.setAttribute('style', "border-color:#4fa647 !important");
+            global_cvv_error.innerHTML = "";
+            return true;
+        }
+
+    }
+
+    function validatenumber() {
+        var card_number = document.card_form.card_number.value;
+        if ((card_number == null || card_number == "") && !paste_flag) {
+            global_card_number.setAttribute('style', "border-color:red !important");
+            global_card_error.innerHTML = "<%= I18n.t('payment_pages.card_cant_blank') %>";
+            call_native_app(false);
+            return false;
+        } else if (card_number.length > 16) {
+            global_card_number.setAttribute('style', "border-color:red !important");
+            global_card_error.innerHTML = "<%= I18n.t('payment_pages.invalid_card_number') %>";
+            paste_flag = false;
+            call_native_app(false);
+            return false;
+        } else if (!card_number.match(/\d{4}(\d{4}){3}\b/)) {
+            global_card_number.setAttribute('style', "border-color:red !important");
+            global_card_error.innerHTML = "<%= I18n.t('payment_pages.card_format') %>: 1234123412341234";
+            paste_flag = false;
+            call_native_app(false);
+            return false;
+        } else {
+            global_card_number.setAttribute('style', "border-color:#4fa647 !important");
+            global_card_error.innerHTML = "";
+            paste_flag = false;
+            return true;
+        }
+    }
+
+    function validatedate() {
+        var expiryDate = document.getElementById("expiration_datea").value;
+        if (expiryDate.length < 5) {
+            global_expiryDate.setAttribute('style', "border-color:red !important");
+            global_expiryDate_error.innerHTML = "<%= I18n.t('payment_pages.select_mmyy') %>";
+            call_native_app(false);
+            return false;
+        } else {
+            var da = new Date();
+            var year = expiryDate.substr(-2)
+            var month = expiryDate.substr(0, 2)
+            if (parseInt(year) < (da.getFullYear() % 100) || parseInt(month) > 12) {
+                global_expiryDate.setAttribute('style', "border-color:red !important");
+                global_expiryDate_error.innerHTML = "<%= I18n.t('payment_pages.expiry_invalid') %>";
+                call_native_app(false);
+                return false;
+            } else if (parseInt(month) < da.getMonth() + 1 && parseInt(year) === (da.getFullYear() % 100)) {
+                global_expiryDate.setAttribute('style', "border-color:red !important");
+                global_expiryDate_error.innerHTML = "<%= I18n.t('payment_pages.expiry_invalid') %>";
+                call_native_app(false);
+                return false;
+            } else {
+                document.getElementById('expiry_date').value = year + month;
+                global_expiryDate.setAttribute('style', "border-color:#4fa647 !important");
+                global_expiryDate_error.innerHTML = "";
+                return true;
+            }
+        }
+    }
+
+    function validateform() {
+        if (global_card_holder_name.value && global_cvv.value && global_card_number.value && global_expiryDate.value) {
+            var valid_form = (validatename() && validatecvv() && validatenumber() && validatedate());
+            call_native_app(valid_form);
+            return valid_form;
+        }
+        return false;
+    }
+
+    function call_native_app(is_enable) {
+        if (typeof native_app !== "undefined") {
+            native_app.isFormValidated(is_enable);
+        } else {
+            window.webkit.messageHandlers.isFormValidated.postMessage(is_enable);
+        }
+    }
+
+    function submit_to_payfort() {
+        if (validatename() && validatecvv() && validatenumber() && validatedate()) {
+            // document.getElementById('loader').style.display = 'block';
+            if (typeof native_app !== "undefined") {
+                native_app.showLoading();
+            } else {
+                window.webkit.messageHandlers.showLoading.postMessage(true);
+            }
+            document.getElementById("add_new_credit_card").submit();
+            return true;
+        }
+        return false;
+    }
+
+</script>
+</html>

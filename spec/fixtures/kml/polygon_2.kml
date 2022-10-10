@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+ <Document>
+  <name>KML Dubai for test</name>
+  <description>KML Description</description>
+  <Style id="style1">
+   <LineStyle>
+    <color>990000ff</color>
+    <width>4</width>
+   </LineStyle>
+   <PolyStyle>
+    <color>330000ff</color>
+   </PolyStyle>
+  </Style>
+  <Placemark>
+   <name>Polygon 1</name>
+   <description></description>
+   <styleUrl>#style1</styleUrl>
+   <Polygon>
+    <altitudeMode>relative</altitudeMode>
+    <LinearRing>
+     <coordinates>
+54.2726,24.2388
+54.2772,24.2450
+54.2823,24.2422
+54.2851,24.2463
+54.2954,24.2396
+54.3047,24.2349
+54.2987,24.2259
+54.2946,24.2275
+54.2926,24.2253
+54.2842,24.2289
+54.2787,24.2348
+54.2728,24.2384
+54.2723,24.2390
+54.2726,24.2388
+    </coordinates>
+    </LinearRing>
+   </Polygon>
+  </Placemark>
+ </Document>
+</kml>

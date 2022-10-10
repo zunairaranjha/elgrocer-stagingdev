@@ -1,0 +1,55 @@
+name: identity-cache
+
+up:
+  - homebrew:
+    - postgresql
+  - ruby: 2.3.3
+  - railgun
+  - bundler
+
+env:
+  RAILGUN_HOST: identity-cache.railgun
+  MYSQL_HOST: identity-cache.railgun
+  POSTGRES_HOST: identity-cache.railgun
+  MEMCACHED_HOST: identity-cache.railgun
+
+commands:
+  test:
+    syntax:
+      optional:
+        argument: file
+        optional: args...
+    desc: 'Run tests'
+    run: |
+      if [[ $# -eq 0 ]]; then
+        bundle exec rake test
+      else
+        bundle exec ruby -I test "$@"
+      fi
+
+  benchmark-cpu:
+    desc: 'Run the identity cache CPU benchmark'
+    run: bundle exec rake benchmark:cpu
+
+  profile:
+    desc: 'Profile IDC code'
+    run: bundle exec rake profile:run
+
+  update-serialization-format:
+    desc: 'Update serialization format test fixture'
+    run: bundle exec rake update_serialization_format
+
+railgun:
+  image: dev:railgun-common-services-0.2.x
+  ip_address: 192.168.64.98
+  memory: 1G
+  cores: 1
+  disk: 1G
+  services:
+    mysql: 3306
+    postgresql: 5432
+    memcached: 11211
+
+packages:
+  - git@github.com:Shopify/dev-shopify.git
+

@@ -1,0 +1,15 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/scout_apm-5.3.1/ext/rusage
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/scout_apm-5.3.1/ext/rusage
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-ef1ote sitelibdir\=./.gem.20221005-11094-ef1ote clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/scout_apm-5.3.1/ext/rusage
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-ef1ote sitelibdir\=./.gem.20221005-11094-ef1ote
+compiling rusage.c
+linking shared-object rusage.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/scout_apm-5.3.1/ext/rusage
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-ef1ote sitelibdir\=./.gem.20221005-11094-ef1ote install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 rusage.bundle ./.gem.20221005-11094-ef1ote

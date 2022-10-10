@@ -1,0 +1,69 @@
+//= require activeadmin_addons/all
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.css.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+@import "active_admin_datetimepicker";
+
+@import "active_skin";
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&subset=latin,latin-ext);
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+
+
+#footer p {
+  display: none
+}
+
+$skinLogo: image-url("logo_5.png") no-repeat 0 0;
+
+$skinActiveColor: #28d16c;
+$skinHeaderBck: #05bc66;
+$panelHeaderBck: #004736;
+
+@import "active_skin";
+
+.retailers-input {
+  margin-left: 20%;
+}
+
+.locations-input {
+  margin-left: 20%;
+}
+
+.delivery-zone-input {
+  margin-left: 20%;
+}
+
+form fieldset.inputs legend {
+  position: relative;
+}
+
+form fieldset.inputs {
+  padding-top: 0px;
+}
+
+#header h1.site_title {
+  padding: 10px;
+  background: none;
+  text-indent: 0;
+}
+
+#header ul.tabs > li {
+  margin: 5px 0px;
+  font-weight: bold;
+}
+
+.breadcrumb a:visited, .breadcrumb a:active {
+  color: #ffffff;
+}

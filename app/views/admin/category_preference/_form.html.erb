@@ -1,0 +1,19 @@
+<%= form_tag(admin_category_preference_add_positions_path, method: "post", multipart: true, :class => 'formtastic' ) do |f| %>
+	<fieldset class="inputs">
+		<legend>
+			<span>Sub Category Order</span>
+		</legend>
+		<ol>
+			<%categories.each do |category|%>
+			<li class = 'string input optional stringish'>
+				<%= label_tag category.name %>
+				<%= text_field_tag "categories[#{category.id}]", category.priority %>
+			</li>
+			<%end%>
+		</ol>
+	</fieldset>
+	<fieldset class="actions">
+  	<%= submit_tag 'Save' %>
+  </fieldset>
+<% end %>
+<br/>

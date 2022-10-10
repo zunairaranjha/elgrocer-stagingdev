@@ -1,0 +1,16 @@
+en:
+  push_message:
+    message_002: "Your order has been cancelled due to payment failure. Please tap here to checkout again or with another payment method!"
+    message_100: "Final amount to capture is greater than the order's total amount!"
+    message_101: "Amount threshold is accepted or rejected!"
+    message_102: "User has selected products!"
+    message_103: "New order is allocated!"
+    message_104: "New allocation!"
+    message_105: "Order Deallocated!"
+    message_106: "Your order is pending due to missing payment details. Please tap to complete your order"
+    message_107: "Sorry! You have been logged out due to inactivity."
+    message_108: "Customer is on the way and should reach in 10 minutes Order#%{order_id}"
+    message_109: "Please, make sure you arrive on time. Your order will be held for 15 mins max."
+    message_110: "Driver has arrived at Store!"
+    message_111: "Your elGrocer order has arrived!"
+    message_112: "Customer is on the spot. Deliver the order now. Order#%{order_id}"

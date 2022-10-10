@@ -1,0 +1,25 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: postgis
+  encoding: unicode
+  pool: 1
+  username: elgrocer
+  password: password1
+  schema_search_path: public,postgis
+
+development:
+  <<: *default
+  database: elgrocer_dev
+
+test:
+  <<: *default
+  database: elgrocer_test
+
+production:
+  <<: *default
+  database: elgrocer_prod

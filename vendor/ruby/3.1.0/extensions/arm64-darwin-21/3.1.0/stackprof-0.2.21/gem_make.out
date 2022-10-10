@@ -1,0 +1,38 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/stackprof-0.2.21/ext/stackprof
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+checking for rb_postponed_job_register_one()... yes
+checking for rb_profile_frames()... yes
+checking for rb_tracepoint_new()... yes
+checking for RUBY_INTERNAL_EVENT_NEWOBJ... yes
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/stackprof-0.2.21/ext/stackprof
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-e0fgan sitelibdir\=./.gem.20221005-11094-e0fgan clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/stackprof-0.2.21/ext/stackprof
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-e0fgan sitelibdir\=./.gem.20221005-11094-e0fgan
+compiling stackprof.c
+stackprof.c:204:30: warning: implicit conversion loses integer precision: 'long' to '__darwin_suseconds_t' (aka 'int') [-Wshorten-64-to-32]
+        timer.it_interval.tv_usec = NUM2LONG(interval);
+                                  ~ ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/arithmetic/long.h:51:22: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG     RB_NUM2LONG          /**< @old{RB_NUM2LONG} */
+                     ^
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/arithmetic/long.h:57:22: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG  rb_num2long_inline   /**< @alias{rb_num2long_inline} */
+                     ^
+stackprof.c:810:34: warning: implicit conversion loses integer precision: 'long' to '__darwin_suseconds_t' (aka 'int') [-Wshorten-64-to-32]
+            timer.it_interval.tv_usec = NUM2LONG(_stackprof.interval);
+                                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/arithmetic/long.h:51:22: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG     RB_NUM2LONG          /**< @old{RB_NUM2LONG} */
+                     ^
+/Users/zunairaranjha/.rvm/rubies/ruby-3.1.2/include/ruby-3.1.0/ruby/internal/arithmetic/long.h:57:22: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG  rb_num2long_inline   /**< @alias{rb_num2long_inline} */
+                     ^
+2 warnings generated.
+linking shared-object stackprof/stackprof.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/3.1.0/gems/stackprof-0.2.21/ext/stackprof
+make DESTDIR\= sitearchdir\=./.gem.20221005-11094-e0fgan sitelibdir\=./.gem.20221005-11094-e0fgan install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 stackprof.bundle ./.gem.20221005-11094-e0fgan/stackprof

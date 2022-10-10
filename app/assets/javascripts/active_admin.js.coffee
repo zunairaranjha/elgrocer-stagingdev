@@ -1,0 +1,9 @@
+#= require active_admin/base
+#= require activeadmin_addons/all
+#= require active_admin/retailers_select
+#= require active_admin/locations_select
+#= require active_admin/promotion_code_brands_select
+#= require active_admin/delivery_zone_select
+#= require active_admin/email_rules
+#= require active_admin_datetimepicker
+#= require active_admin/slots_batch_actions

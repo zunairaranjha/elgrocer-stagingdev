@@ -1,0 +1,233 @@
+FORMAT: 1A
+HOST: http://el-grocer-staging-dev.herokuapp.com:80/
+
+# elgrocer
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## elGrocer[api/]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
+            
+### Analytics [POST]
+
+Add user activity in logs.
+
++ Request (/v1/analytics.json)
+
+{
+"shopper_id" : "20",
+"event_id": "1"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Shopper Id: 1574
+            Event Id: 15
+
+    + Body
+
+            {
+               -- need to enter , currently some error in response
+            }           
+### Brands [GET]
+
+List of all brands. Requires authentication.
+
++ Request (/v1/brands.json)
+
+{
+  "next": "Bool",
+  "brands": [
+    "show_brand"
+  ]
+}
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Authentication-Token: KDEx5qZ_QsXaWJmABtH3
+          
+    + Body
+
+            {
+    "status": "success",
+    "data": {
+        "next": true,
+        "brands": [
+            {
+                "id": 296,
+                "name": "Afia",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/296/original/Afia.png?1477831040"
+            },
+            {
+                "id": 776,
+                "name": "After Eight",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/776/original/after8.png?1442839587"
+            },
+            {
+                "id": 878,
+                "name": "Ahmed Foods",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/878/original/Ahmed.png?1443512214"
+            },
+            {
+                "id": 446,
+                "name": "Air Wick",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/446/original/air_wick.png?1439326016"
+            },
+            {
+                "id": 479,
+                "name": "Al Ain",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/479/original/Al_Ain.png?1477831053"
+            },
+            {
+                "id": 906,
+                "name": "Al Ain Water",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/906/original/2.png?1445150711"
+            },
+            {
+                "id": 24,
+                "name": "Al Alali",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/024/original/Screen_Shot_2015-09-06_at_1.12.45_PM.png?1441530894"
+            },
+            {
+                "id": 860,
+                "name": "Al Areesh",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/860/original/al_areesh.png?1443606609"
+            },
+            {
+                "id": 402,
+                "name": "Al Arz",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/402/original/Al_Arz.png?1443953923"
+            },
+            {
+                "id": 901,
+                "name": "Al Bawadi",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/901/original/AL_BAWADI.png?1444717852"
+            },
+            {
+                "id": 754,
+                "name": "Alfa",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/754/original/alfa.png?1442901914"
+            },
+            {
+                "id": 783,
+                "name": "Algida",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/783/original/algida-logo.jpg?1442838802"
+            },
+            {
+                "id": 637,
+                "name": "Alicafe",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/637/original/alicafe.png?1442750709"
+            },
+            {
+                "id": 892,
+                "name": "Al Islami",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/892/original/Al_islami.png?1444046026"
+            },
+            {
+                "id": 39,
+                "name": "Alitea",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/039/original/alitea.png?1439326329"
+            },
+            {
+                "id": 603,
+                "name": "Al Jazira Poultry",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/603/original/GOlden.png?1443339337"
+            },
+            {
+                "id": 950,
+                "name": "Al Kadi Eggs",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/950/original/2.png?1451810913"
+            },
+            {
+                "id": 897,
+                "name": "Al Khaleej",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/897/original/Khaleej-Final-Logo-Eng.png?1444551591"
+            },
+            {
+                "id": 110,
+                "name": "Al Khaleejia",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/110/original/al_khaleejia.png?1439326189"
+            },
+            {
+                "id": 647,
+                "name": "All Bran",
+                "image_url": "http://s3-eu-west-1.amazonaws.com/elgrocertest/brands/photos/000/000/647/original/Allbran.png?1442926222"
+            }
+        ]
+    }
+}

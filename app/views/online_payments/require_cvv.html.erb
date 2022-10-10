@@ -1,0 +1,143 @@
+<html class=<%= @extra_params_cvv[:locale] %> dir=<%= @extra_params_cvv[:locale].to_s.downcase.eql?('ar') ? 'rtl' : 'ltr' %> lang=<%= @extra_params_cvv[:locale] %>>
+<% content_for :head do %>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+  <script>
+      var firebaseConfig = {
+          apiKey: "<%= ENV['FIREBASE_LOGS_KEY']%>",
+          authDomain: "<%= ENV['FIREBASE_AUTHDOMEIN'] %>",
+          databaseURL: "<%= ENV['FIREBASE_DBURL'] %>",
+          projectId: "<%= ENV['FIREBASE_PROJECT_Id'] %>",
+          storageBucket: "<%= ENV['FIREBASE_STORAGE_BUCKET'] %>",
+          messagingSenderId: "<%= ENV['FIREBASE_MESSAGE_SENDER_ID'] %>",
+          appId: "<%= ENV['FIREBASE_APP_ID'] %>",
+          measurementId: "<%= ENV['FIREBASE_MEASURE_ID'] %>"
+      };
+      firebase.initializeApp(firebaseConfig);
+      var analytics = firebase.analytics();
+      function pageLoad() {
+          analytics.setCurrentScreen('Cvv-Page');
+          analytics.logEvent('EG_cvvPageLoad', { 'OrderID':"<%= @extra_params_cvv[:merchant_reference].split('-')[1] %>", 'Type':'Check Out', 'Source':"<%= @extra_params_cvv[:source] %>", 'AppVersion':"<%= @extra_params_cvv[:app_version].to_s %>", 'Email':"<%=@extra_params_cvv[:customer_email] %>", 'Lang':"<%= @extra_params_cvv[:locale] %>"});
+      }
+
+      function submitbtnClick() {
+          analytics.logEvent('EG_cvvDetailsSubmit', { 'OrderID':"<%= @extra_params_cvv[:merchant_reference].split('-')[1] %>", 'Type':'Check Out', 'Source':"<%= @extra_params_cvv[:source] %>", 'AppVersion':"<%= @extra_params_cvv[:app_version].to_s %>", 'Email':"<%=@extra_params_cvv[:customer_email] %>", 'Lang':"<%= @extra_params_cvv[:locale] %>"});
+      }
+
+      function backbtnClick() {
+          analytics.logEvent('EG_cvvPageClose', { 'OrderID':"<%= @extra_params_cvv[:merchant_reference].split('-')[1] %>", 'Type':'Check Out', 'Source':"<%= @extra_params_cvv[:source] %>", 'AppVersion':"<%= @extra_params_cvv[:app_version].to_s %>", 'Email':"<%=@extra_params_cvv[:customer_email] %>", 'Lang':"<%= @extra_params_cvv[:locale] %>"});
+      }
+
+  </script>
+  <style type="text/css">
+    body{margin:0;padding:0;font-family:Arial; height: 100%;}
+    .creditCardForm{max-width:700px;background:#f7f7f7;margin:0 auto;padding:30px;box-sizing:border-box;}
+    .creditCardForm h3{margin:0 0 20px;padding:0px;}
+    .form_grid{display:block;width:100%;margin-bottom:25px;}
+    .form_grid label{display:block;margin-bottom:7px;}
+    .form_grid input{display:block !important; width:100% !important; padding:15px !important; border-radius:6px !important; box-sizing:border-box !important; border:1px solid #4fa647 !important; }
+    .form_grid input[type="checkbox"]{display:inline-block !important;width:auto !important;}
+    .form_grid input:focus {border-color:#4fa647 !important; outline: 0 !important; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(79,166,71,.6) !important; box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(79,166,71,.6) !important; }
+    .form_grid select{width:140px !important; padding:10px !important; border-radius:6px !important; box-sizing:border-box !important; border:1px solid #4fa647 !important; }
+    .form_grid option{font-size:16px;}
+    .submit_btn{width:100% !important;font-size:20px !important;display:block !important;text-align:center !important;cursor:pointer !important;border:1px solid transparent !important;padding:12px 12px !important;box-sizing:border-box !important;border-radius:4px !important;color:#fff !important;background-color:#429d39 !important; background-image: none !important;}
+    .submit_btn:hover{color:#fff;background-color:#5aaf52;box-shadow:0 6px 12px 0 rgba(66,157,57,.37);}
+    .error_msg{position: absolute !important; font-size: 12px !important; padding-left: 16px !important; margin-top: 4px !important; color: #ff0000 !important; }
+    .header_logo{display:block;width:100%;background:#ffffff;padding: 20px 15px 15px;box-sizing: border-box;margin-bottom:10px;min-height:75px;}
+    .header_logo img{max-width:160px;}
+    #expiration_dateaMask{display:none;}
+    .back_btn{float:right !important;background-color:#e7e7e7 !important;color:#4fa647 !important;padding:9px 15px !important; border-radius:5px !important; text-decoration:none !important; }
+    .ar .back_btn{float: left !important;}
+    .back_btn:hover{box-shadow:0 3px 8px 0 rgb(10 10 10 / 10%);}
+    #loader{display:none;}
+    .ar .form_grid label{font-weight:600 !important;}
+    .ar .error_msg{font-size:14px !important;font-weight:600 !important;}
+
+    @media (max-width:922px){
+      /*.header_logo{display:none;}*/
+    }
+    .submit_btn:disabled {
+      background: #9a9898 !important;
+    }
+  </style>
+<% end %>
+
+<body onload="pageLoad()">
+<% if !@extra_params_cvv[:web_url].eql?('1') %>
+  <div class="header_logo">
+    <img src="https://elgrocer-data.s3.us-east-2.amazonaws.com/elgrocer/site-logo-green.png">
+    <a href=<%= Base64.decode64(@extra_params_cvv[:web_url]) %>; class="back_btn" onclick="backbtnClick()"><%= I18n.t("payment_pages.back_to") %></a>
+  </div>
+<% end %>
+
+<div class="creditCardForm">
+  <form id="require_cvv" class="require_cvv" method="post" name= "cvv_form" onsubmit="return check()" action="/online_payments/authorization_request">
+    <h3><%= I18n.t("payment_pages.enter_cvv") %></h3>
+    <div class="form_grid">
+      <label><%= I18n.t("payment_pages.cvv") %>:</label>
+      <input id="cvv_innera" name="cvv" maxlength="3" inputmode="tel" type="password" onchange="validateform()" placeholder="<%= I18n.t('payment_pages.cvv') %>"
+             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" autofocus>
+      <span id="cvv_inner" class="error_msg"></span>
+      <input type="hidden" name='merchant_extra' value=<%= @extra_params_cvv[:client_ip]%> >
+      <input type="hidden" name='merchant_reference' value=<%=@extra_params_cvv[:merchant_reference] %> >
+      <input type="hidden" name='merchant_extra1' value=<%= @extra_params_cvv[:customer_email]%>>
+      <input type="hidden" name='token_name' value=<%= @extra_params_cvv[:token]%> >
+      <input type="hidden" name='merchant_extra2' value=<%= @extra_params_cvv[:web_url]%>>
+    </div>
+    <div id="loader" style="position:fixed;top:0px;background: rgba(0,0,0,.3);width: 100%;left:0;height:100%;text-align:center; display: none">
+      <img style="top: 50%;margin-left:-30px; position: absolute;" src="https://elgrocer-data.s3.us-east-2.amazonaws.com/elgrocer/loading.gif">
+    </div>
+    <div class="form_grid">
+      <button class="submit_btn" id="submit_btn" type="submit" onclick="submitbtnClick()"><%= I18n.t("payment_pages.confirm_and_order") %></button>
+    </div>
+  </form>
+</div>
+
+<script>
+    function check() {
+        if (validateform()){
+            document.getElementById("submit_btn").disabled = true;
+            document.getElementById('loader').style.display = 'block';
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+    if(isAndroid) {
+        $(function() {
+            $('#cvv_innera').attr('inputmode', 'numeric');
+        });
+    }
+    function validateform(){
+        var numeric = /^[0-9]+$/;
+        var cvv_inner = document.cvv_form.cvv.value;
+        if (cvv_inner == null || cvv_inner == ""){
+            document.getElementById("cvv_innera").setAttribute('style', "border-color:red !important");
+            document.getElementById('cvv_inner').innerHTML = "<%= I18n.t('payment_pages.cvv_cant_blank') %>";
+            return false;
+        }
+        else if(!cvv_inner.match(numeric)){
+            document.getElementById("cvv_innera").setAttribute('style', "border-color:red !important");
+            document.getElementById('cvv_inner').innerHTML = "<%= I18n.t('payment_pages.digits_only') %>";
+            return false;
+        }
+        else if(cvv_inner.length <= 2 || cvv_inner.length > 3){
+            document.getElementById("cvv_innera").setAttribute('style', "border-color:red !important");
+            document.getElementById('cvv_inner').innerHTML = "<%= I18n.t('payment_pages.invalid_cvv') %>";
+            return false;
+        }
+        else{
+            document.getElementById("cvv_innera").setAttribute('style', "border-color:#4fa647 !important");
+            document.getElementById('cvv_inner').innerHTML = "";
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

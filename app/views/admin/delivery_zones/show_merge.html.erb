@@ -1,0 +1,10 @@
+<h2>Merge</h2>
+<p>Delivery zone: <b><%= @location.name %></b></p>
+<%= form_tag(merge_admin_delivery_zone_path(@location), method: "post", multipart: true) do |f| %>
+  Select primary delivery zone:
+  <%= select_tag(:correct_id, options_for_select(Location.all.collect {|p| [ p.name, p.id ] })) %>
+  <br/>
+  <br/>
+  <%= submit_tag 'Merge!' %>
+<% end %>
+<br/>

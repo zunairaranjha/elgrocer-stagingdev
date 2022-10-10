@@ -1,0 +1,7 @@
+bin/
+Gemfile.lock
+coverage/
+spec/rails/rails-*
+pkg
+.bundle
+vendor/bundl

@@ -1,0 +1,23 @@
+engines:
+  rubocop:
+    enabled: true
+  eslint:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+ratings:
+  paths:
+  - app/**
+  - lib/**
+  - "**.rb"
+  - "**.go"
+exclude_paths:
+- config/**/*
+- spec/**/*
+- db/**
+- "**/vendor/**/*"

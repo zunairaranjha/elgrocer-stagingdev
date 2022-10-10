@@ -1,0 +1,431 @@
+<center>
+  <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;min-height:100%;margin:0;padding:0;width:100%;font-family:helvetica neue,helvetica,arial,verdana,sans-serif;background-color:#fafafa">
+    <tbody><tr>
+      <td align="center" valign="top" style="min-height:100%;margin:0;padding:10px;width:100%;font-family:helvetica neue,helvetica,arial,verdana,sans-serif;border-top:0">
+        <div style="color:#666;font-size:11px!important;margin-bottom:20px;border-bottom:1px solid #eee;padding-bottom:10px"></div>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;max-width:800px;border:0">
+          <tbody><tr>
+            <td valign="top" style="background-color:rgb(250,250,250);background-image:none;background-size:cover;border-top:0px;border-bottom:0px;padding-top:9px;padding-bottom:9px">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                <tbody>
+                <tr>
+                  <td valign="top" style="padding-top:9px">
+
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:210px;border-collapse:collapse" width="100%">
+                      <tbody><tr>
+
+                        <td valign="top" style="padding-top:0;padding-left:18px;padding-bottom:9px;padding-right:18px;color:#656565;font-family:Helvetica;font-size:12px;line-height:150%;text-align:left">
+                        </td>
+                      </tr>
+                      </tbody></table>
+                  </td>
+                </tr>
+                </tbody>
+              </table></td>
+          </tr>
+          </tbody></table>
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+          <tbody >
+          <tr>
+            <td valign="top" style="padding:0px" >
+              <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" style="min-width:100%;border-collapse:collapse">
+                <tbody><tr>
+                  <td  valign="top" style="padding-right:0px;padding-left:0px;padding-top:0;padding-bottom:0;text-align:center">
+                    <%= image_tag 'order_report_logo.png', align: "center", :alt => "el Grocer", width: "254", :style => "max-width:254px;padding-bottom:0px;display:inline;vertical-align:bottom;border:0px;outline:none;text-decoration:none" %>
+                  </td>
+                </tr>
+                </tbody></table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+          <tbody >
+          <tr>
+            <td valign="top" style="padding-top:9px">
+              <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%;min-width:100%;border-collapse:collapse" width="100%" >
+                <tbody><tr>
+                  <td valign="top" style="padding-top:0;padding-right:18px;padding-bottom:9px;padding-left:18px">
+                    <h1 style="text-align:center;display:block;margin:0;padding:0;color:#202020;font-family:Helvetica;font-size:26px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:normal"><span style="color:#05BC66"><span style="font-size:24px"><span style="font-family:helvetica neue,helvetica,arial,verdana,sans-serif">
+            <strong>
+              <% if @days_diff == 0 %>
+                Daily Report - <%= @retailerreport.from_date.strftime("%A #{@retailerreport.from_date.day.ordinalize} %b") %>
+              <% elsif @days_diff == 6 %>
+                Weekly Report - <%= @retailerreport.from_date.strftime("%A #{@retailerreport.from_date.day.ordinalize} %b") %> to <%= @retailerreport.to_date.strftime("%A #{@retailerreport.to_date.day.ordinalize} %b") %>
+              <% elsif @days_diff >= 27 and @days_diff <= 30 %>
+                Monthly Report - <%= @retailerreport.from_date.strftime("%A #{@retailerreport.from_date.day.ordinalize} %b") %> to <%= @retailerreport.to_date.strftime("%A #{@retailerreport.to_date.day.ordinalize} %b") %>
+              <% else %>
+                Report - <%= @retailerreport.from_date.strftime("%A #{@retailerreport.from_date.day.ordinalize} %b") %> to <%= @retailerreport.to_date.strftime("%A #{@retailerreport.to_date.day.ordinalize} %b") %>
+              <% end %>
+              </strong>
+              </span></span></span>
+                    </h1>
+                    <!-- <a href=<%= @retailerreport.excel.url %> style="text-align:center;display:block;color:#ccc;margin-top:5px;font-size:13px!important;font-weight:300!important;letter-spacing:0px;padding:0px" rel="nofollow" target="_blank"> Download report</a> -->
+                  </td>
+                </tr>
+                </tbody></table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table style="border-collapse:collapse;min-width:600px;width:auto;max-width:100%;margin:0px auto;font-size:14px">
+          <thead>
+          <tr>
+
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Shop name</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Total Orders</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Total Sales</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Cancellation %</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Processed Orders</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Processed Sales</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">AVG Basket</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Order OOS %</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Items OOS %</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Substitution %</th>
+            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">AVG ratings (stars)</th>
+<!--            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">AVG ratings (num)</th>-->
+            <!--            <th style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top;font-weight:bold;border-bottom-width:2px">Shop status</th>-->
+
+          </tr>
+          </thead>
+          <tbody>
+
+          <%
+            @total_orders = 0
+            @total_amount = 0
+            @total_cancel_orders = 0
+            @total_substitutions_orders = 0
+            @total_out_of_stock_orders = 0
+            @total_products = 0
+            @total_out_of_stock = 0
+            @total_substitutions = 0
+            @total_feedbacks_average = 0
+            @total_processed_orders = 0
+            @processed_orders_total_value = 0
+            @avg_fee_back_counter = 0
+            @total_substitutions_selected = 0
+
+            @retailers.each do |ret|
+              @orders = ret.orders.where('date(orders.estimated_delivery_at) BETWEEN ? AND ?', @retailerreport.from_date.to_date, @retailerreport.to_date.to_date).where.not(status_id: -1)
+              @orders_count = @orders.count
+              @processed_orders_count = @orders.where(status_id: [2,3,5]).count
+              @orders_amount = @orders.sum("total_value + service_fee + delivery_fee")
+              @processed_orders_value = @orders.where(status_id: [2,3,5]).sum("total_value + service_fee + delivery_fee")
+              @cancel_orders_count = @orders.where(status_id: 4).count
+              @cancel_orders_rate = ((@cancel_orders_count / (@orders_count.to_f.nonzero? || 1)) * 100).round(2)
+              @substitutions_orders_count = @orders.joins(:order_substitutions).distinct('orders.id').count
+              @out_of_stock_order_count = @orders.joins(:order_positions).where("order_positions.was_in_shop = 'f'").distinct('orders.id').count
+              @products_count = OrderPosition.where(order_id: @orders).count
+              @out_of_stock_count = OrderPosition.where(order_id: @orders).where(was_in_shop: false).count
+              @substitution_count = OrderSubstitution.where(order_id: @orders).distinct.count('product_id')
+              @substitution_selected = OrderSubstitution.where(order_id: @orders, is_selected: true).count
+              @out_of_stock_rate = ((@out_of_stock_count / (@products_count.to_f.nonzero? || 1)) * 100).round(2)
+              @substitution_rate = ((@substitution_selected / (@products_count.to_f.nonzero? || 1)) * 100).round(2)
+              @order_feedbacks_average = OrderFeedback.where(order_id: @orders).where("order_feedbacks.delivery IS NOT NULL or order_feedbacks.speed IS NOT NULL or order_feedbacks.accuracy IS NOT NULL or order_feedbacks.price IS NOT NULL or order_feedbacks.comments IS NOT NULL").average(:delivery).to_f.round(1)
+
+              @shop_status_rule = @cancel_orders_rate + @out_of_stock_rate / 2
+
+
+              @average_amount = (@orders_amount /  (@orders_count.to_f.nonzero? || 1)).round(2)
+              @total_orders += @orders_count
+              @total_amount += @orders_amount
+              @total_cancel_orders += @cancel_orders_count
+              @total_substitutions_orders += @substitutions_orders_count
+              @total_out_of_stock_orders += @out_of_stock_order_count
+              @total_products += @products_count
+              @total_out_of_stock += @out_of_stock_count
+              @total_substitutions += @substitution_count
+              @total_substitutions_selected += @substitution_selected
+              @total_feedbacks_average = @order_feedbacks.average(:delivery).to_f.round(1)
+              @processed_orders_total_value += @processed_orders_value
+              @total_processed_orders += @processed_orders_count
+
+%>
+
+            <tr>
+              <th style="padding:10px;outline:0;text-align:left;border-bottom:1px solid;vertical-align:top;font-weight:bold;white-space:nowrap"><%= ret.company_name %> <span style="display:block;color:#ccc;margin-top:5px;font-size:12px!important;font-weight:300!important;letter-spacing:0px;padding:0px"> </span></th>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @orders_count.to_i %></td>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @orders_amount.round(2) %><span style="display:block;color:#ccc;margin-top:5px;font-size:12px!important;font-weight:300!important;letter-spacing:0px;padding:0px">AED</span></td>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @cancel_orders_rate %>%</td>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @processed_orders_count.to_i %></td>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @processed_orders_value.round(2) %><span style="display:block;color:#ccc;margin-top:5px;font-size:12px!important;font-weight:300!important;letter-spacing:0px;padding:0px">AED</span></td>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @average_amount %><span style="display:block;color:#ccc;margin-top:5px;font-size:12px!important;font-weight:300!important;letter-spacing:0px;padding:0px">AED</span></td>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= ((@out_of_stock_order_count / (@orders_count.to_f.nonzero? || 1)) * 100).round(2) %>%</td>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @out_of_stock_rate %>%</td>
+              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @substitution_rate %>%</td>
+              <td style="color:#05BC66;font-size:14px;letter-spacing:-1.5px;padding:3px;text-align:center;outline:0;border-bottom:1px solid;vertical-align:top">  <%= "#{'★★★★★'.first(@order_feedbacks_average.round(0)) + '☆☆☆☆☆'.last(5-@order_feedbacks_average.round(0))}" %> <span style="display:block;color:#ccc;font-size:12px;margin-top:5px;letter-spacing:0px"> <%= OrderFeedback.where(order_id: @orders).where("order_feedbacks.delivery IS NOT NULL or order_feedbacks.speed IS NOT NULL or order_feedbacks.accuracy IS NOT NULL or order_feedbacks.price IS NOT NULL or order_feedbacks.comments IS NOT NULL").count %> reviews</span></td>
+<!--              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%#= @order_feedbacks_average %></td>-->
+              <!--              <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top">-->
+                <%# if @shop_status_rule > 5 %>
+<!--  <span style="color:red">-->
+<!--    <strong>Service problem</strong>-->
+<!--  </span>-->
+                <%# elsif @shop_status_rule == 5 %>
+<!--  <span style="color:orange">-->
+<!--    <strong>Improvement needed</strong>-->
+<!--  </span>-->
+                <%# elsif @shop_status_rule < 5 && @orders_count > 0 %>
+<!--  <span style="color:green">-->
+<!--    <strong>Excellent status</strong>-->
+<!--  </span>-->
+                <%# else %>
+
+                <%# end %>
+
+<!--              </td>-->
+            </tr>
+          <% end %>
+
+
+          <tr style="font-weight:bold">
+            <th style="padding:10px;outline:0;text-align:left;border-bottom:1px solid;vertical-align:top;font-weight:bold;white-space:nowrap">TOTALS</th>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @total_orders %> </td>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @total_amount.round(2) %> </td>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"> <%= ((@total_cancel_orders / (@total_orders.to_f.nonzero? || 1)) * 100).round(2) %>% </td>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @total_processed_orders %> </td>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"><%= @processed_orders_total_value.round(2) %> </td>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"> <%= (@total_amount / (@total_orders.to_f.nonzero? || 1)).round(2) %> </td>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"> <%= ((@total_out_of_stock_orders / (@total_orders.to_f.nonzero? || 1)) * 100).round(2) %>% </td>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"> <%= ((@total_out_of_stock / (@total_products.to_f.nonzero? || 1)) * 100).round(2) %>% </td>
+            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"> <%= ((@total_substitutions_selected / (@total_products.to_f.nonzero? || 1)) * 100).round(2) %>% </td>
+            <td style="color:#05BC66;font-size:14px;font-weight:normal;letter-spacing:-1.5px;padding:3px;text-align:center;outline:0;border-bottom:1px solid;vertical-align:top">  <%= "#{'★★★★★'.first(@total_feedbacks_average.round(0)) + '☆☆☆☆☆'.last(5-@total_feedbacks_average.round(0))}" %>  </td>
+<!--            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"> <%#= @total_feedbacks_average %> </td>-->
+            <!--            <td style="padding:10px;outline:0;text-align:center;border-bottom:1px solid;vertical-align:top"> </td>-->
+          </tr>
+
+          </tbody>
+        </table>
+
+
+        <!-- <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+        <tbody >
+          <tr>
+            <td style="padding-top:20px;padding-right:18px;padding-bottom:18px;padding-left:18px" valign="top" align="center" >
+              <table border="0" cellpadding="0" cellspacing="0" style="background-color:#eee;border-collapse:separate;border-radius:5px">
+                <tbody>
+                  <tr>
+                    <td align="center" valign="middle" style="font-family:Arial;font-size:14px;padding:20px">
+                      <a style="text-align:left;font-weight:200;letter-spacing:normal;line-height:100%;text-decoration:none;color:#808080;display:block"><span style="color:green">Stable status:</span> The average of total customer rating stars is more than 3.5 AND the cancelation rate is below 5%.</a><br>
+                       <a style="text-align:left;font-weight:200;letter-spacing:normal;line-height:100%;text-decoration:none;color:#808080;display:block"><span style="color:orange">Improvement needed:</span> The average of total customer rating stars is below 3.5 OR the cancelation rate is more than 5%.</a><br>
+                       <a style="text-align:left;font-weight:200;letter-spacing:normal;line-height:100%;text-decoration:none;color:#808080;display:block"><span style="color:green">Excellent status:</span> The average of total customer rating stars is more than 4, the cancelation rate is below 4% AND the out of stock rate is below 5%.</a><br>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+        </table> -->
+
+<!--        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock" style="border-collapse:collapse">-->
+<!--          <tbody class="mcnCaptionBlockOuter">-->
+<!--          <tr>-->
+<!--            <td class="mcnCaptionBlockInner" valign="top" style="padding:9px">-->
+<!--              <a href=<%#= @retailerreport.excel.url %> style="text-align:center;display:block;color:green;margin-top:5px;font-size:12px!important;font-weight:300!important;letter-spacing:0px;padding:0px" rel="nofollow" target="_blank"> Download report</a>-->
+<!--            </td>-->
+<!--          </tr>-->
+<!--          </tbody>-->
+<!--        </table>-->
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock" style="min-width:100%;border-collapse:collapse;">
+          <tbody class="mcnButtonBlockOuter">
+          <tr>
+            <td style="padding-top:20px;padding-right:18px;padding-bottom:18px;padding-left:18px" valign="top" align="center" class="mcnButtonBlockInner">
+              <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse:separate;border-radius:5px;background-color:#05BC66">
+                <tbody>
+                <tr>
+                  <td align="center" valign="middle" class="mcnButtonContent" style="font-family:Arial;font-size:16px;padding:15px">
+                    <a class="mcnButton" title="Reach out to us" href=<%= @retailerreport.excel.url %> style="font-weight:bold;letter-spacing:normal;line-height:100%;text-align:center;text-decoration:none;color:#ffffff;display:block" rel="nofollow" target="_blank">Download report</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;margin-top:10px;border-collapse:collapse">
+          <tbody >
+          <tr>
+            <td valign="top" >
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse" >
+                <tbody><tr>
+                  <td style="padding-top:9px;padding-left:18px;padding-bottom:9px;padding-right:18px">
+                    <table border="0" cellpadding="18" cellspacing="0" width="100%" style="min-width:100%!important;background-color:#05BC66;border-collapse:collapse">
+                      <tbody><tr>
+                        <td valign="top" style="color:#ffffff;font-family:Helvetica;font-size:10px;font-style:normal;font-weight:normal;text-align:center">
+                          <div style="text-align:center"><span style="font-size:20px">User feedback</span></div>
+
+                        </td>
+                      </tr>
+                      </tbody></table>
+                  </td>
+                </tr>
+                </tbody></table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse;table-layout:fixed">
+          <tbody >
+          <tr>
+            <td style="min-width:100%;padding:10px 18px">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                <tbody><tr>
+                  <td>
+                    <span></span>
+                  </td>
+                </tr>
+                </tbody></table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <% @order_feedbacks.each do |review| %>
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+            <tbody >
+            <tr>
+              <td valign="top" >
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse" >
+                  <tbody><tr>
+                    <td style="padding-top:9px;padding-left:18px;padding-bottom:9px;padding-right:18px">
+                      <table border="0" cellpadding="18" cellspacing="0" width="100%" style="min-width:100%!important;background-color:#cccccc;border-collapse:collapse">
+                        <tbody><tr>
+                          <td valign="top" style="color:#000000;font-family:Helvetica;font-size:14px;font-style:normal;font-weight:normal;text-align:left">
+                            <div style="text-align:left"><span style="font-size:15px"> <%= review.order.shopper.name %> -  <%= review.order.retailer.company_name %> </span>&nbsp;-&nbsp;<span style="color:#696969"><span data-term="goog_600130155" tabindex="0"><span ><%= review.created_at.strftime("%I:%M %p") %></span></span> | Has placed&nbsp;<span style="font-size:15px"> <%= review.order.shopper.orders.where(retailer_id: review.order.retailer_id).count %>  orders so far | Order# <%= review.order_id %> </span></span><br>&nbsp;</div>
+                            <div style="text-align:left">
+                              <p><strong><%= OrderFeedback.Questions[:delivery] %></strong><br>
+                                <em><%= "#{'★★★★★'.first(review.delivery.to_i) + '☆☆☆☆☆'.last(5-review.delivery.to_i)}" %></em></p>
+
+                              <p><strong><%= OrderFeedback.Questions[:speed] %></strong><br>
+                                <em><%= review.speed.to_s.humanize %></em></p>
+
+                              <p><strong><%= OrderFeedback.Questions[:accuracy] %></strong><br>
+                                <em><%= review.accuracy.to_s.humanize %></em></p>
+
+                              <p><strong><%= OrderFeedback.Questions[:price] %></strong><br>
+                                <em><%= review.price.to_s.humanize %></em></p>
+
+                              <p><strong><%= OrderFeedback.Questions[:comments] %></strong><br>
+                                <em><%= review.comments %></em></p>
+                            </div>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        <% end %>
+
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="margin-top:50px;min-width:100%;border-collapse:collapse">
+          <tbody class="mcnBoxedTextBlockOuter">
+          <tr>
+            <td valign="top" class="mcnBoxedTextBlockInner">
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse" class="mcnBoxedTextContentContainer">
+                <tbody><tr>
+
+                  <td style="padding-top:9px;padding-left:18px;padding-bottom:9px;padding-right:18px">
+
+                    <table border="0" cellpadding="18" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width:100%!important;background-color:#05BC66;border-collapse:collapse">
+                      <tbody><tr>
+                        <td valign="top" class="mcnTextContent" style="color:#ffffff;font-family:Helvetica;font-size:10px;font-style:normal;font-weight:normal;text-align:center">
+                          <div style="text-align:center"><span style="font-size:20px">Number of customers reviews: <span style="color:#ffffff"><strong><%= @order_feedbacks.count %></strong></span></span></div>
+
+                        </td>
+                      </tr>
+                      </tbody></table>
+                  </td>
+                </tr>
+                </tbody></table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;border-collapse:collapse;table-layout:fixed">
+          <tbody class="mcnDividerBlockOuter">
+          <tr>
+            <td class="mcnDividerBlockInner" style="min-width:100%;padding:10px 18px">
+              <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                <tbody><tr>
+                  <td>
+                    <span></span>
+                  </td>
+                </tr>
+                </tbody></table>
+
+            </td>
+          </tr>
+          </tbody>
+        </table></td></tr></tbody>
+  </table>
+
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;border-collapse:collapse;table-layout:fixed">
+    <tbody class="mcnDividerBlockOuter">
+    <tr>
+      <td class="mcnDividerBlockInner" style="min-width:100%;padding:15px 18px">
+        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+          <tbody><tr>
+            <td>
+              <span></span>
+            </td>
+          </tr>
+          </tbody></table>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock" style="min-width:100%;border-collapse:collapse">
+    <tbody class="mcnButtonBlockOuter">
+    <tr>
+      <td style="padding-top:0;padding-right:18px;padding-bottom:18px;padding-left:18px" valign="top" align="center" class="mcnButtonBlockInner">
+        <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse:separate;border-radius:5px;background-color:#05BC66">
+          <tbody>
+          <tr>
+            <td align="center" valign="middle" class="mcnButtonContent" style="font-family:Arial;font-size:16px;padding:15px">
+              <a class="mcnButton" title="Reach out to us" href="mailto:support@elgrocer.com?subject=Feedback%20regarding%20shop%20report" style="font-weight:bold;letter-spacing:normal;line-height:100%;text-align:center;text-decoration:none;color:#ffffff;display:block" rel="nofollow" target="_blank">Contact us</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="text-align:center;min-width:100%;border-collapse:collapse">
+    <tbody class="mcnTextBlockOuter">
+    <tr>
+      <td valign="top" class="mcnTextBlockInner" style="padding-top:9px">
+        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%;min-width:100%;border-collapse:collapse" width="100%" class="mcnTextContentContainer">
+          <tbody><tr>
+            <td valign="top" class="mcnTextContent" style="padding-top:0;padding-right:18px;padding-bottom:9px;padding-left:18px;color:#656565;font-family:Helvetica;font-size:12px;line-height:150%;text-align:center">
+              <em>Copyright © 2020 el Grocer, All rights reserved.</em>
+              <br>
+              <strong>Our mailing address is:</strong><br>
+              <a href="mailto:support@elgrocer.com" target="_blank">support@elgrocer.com</a>
+            </td>
+          </tr>
+          </tbody></table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</center>

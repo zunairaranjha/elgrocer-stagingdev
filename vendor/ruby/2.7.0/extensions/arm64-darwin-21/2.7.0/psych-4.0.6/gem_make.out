@@ -1,0 +1,166 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/psych-4.0.6/ext/psych
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for yaml.h... yes
+checking for yaml_get_version() in -lyaml... yes
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/psych-4.0.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-lqi6b0 sitelibdir\=./.gem.20221005-97445-lqi6b0 clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/psych-4.0.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-lqi6b0 sitelibdir\=./.gem.20221005-97445-lqi6b0
+compiling psych.c
+compiling psych_emitter.c
+compiling psych_parser.c
+psych_parser.c:88:46: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    ePsychSyntaxError = rb_const_get(mPsych, rb_intern("SyntaxError"));
+                                             ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+psych_parser.c:88:46: note: '{' token is here
+    ePsychSyntaxError = rb_const_get(mPsych, rb_intern("SyntaxError"));
+                                             ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+psych_parser.c:88:46: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    ePsychSyntaxError = rb_const_get(mPsych, rb_intern("SyntaxError"));
+                                             ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+psych_parser.c:88:46: note: ')' token is here
+    ePsychSyntaxError = rb_const_get(mPsych, rb_intern("SyntaxError"));
+                                             ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+psych_parser.c:90:42: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    return rb_funcall(ePsychSyntaxError, rb_intern("new"), 6,
+                                         ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+psych_parser.c:90:42: note: '{' token is here
+    return rb_funcall(ePsychSyntaxError, rb_intern("new"), 6,
+                                         ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+psych_parser.c:90:42: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    return rb_funcall(ePsychSyntaxError, rb_intern("new"), 6,
+                                         ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+psych_parser.c:90:42: note: ')' token is here
+    return rb_funcall(ePsychSyntaxError, rb_intern("new"), 6,
+                                         ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+psych_parser.c:133:44: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    io_external_encoding = rb_funcall(src, rb_intern("external_encoding"), 0);
+                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+psych_parser.c:133:44: note: '{' token is here
+    io_external_encoding = rb_funcall(src, rb_intern("external_encoding"), 0);
+                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+psych_parser.c:133:44: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    io_external_encoding = rb_funcall(src, rb_intern("external_encoding"), 0);
+                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+psych_parser.c:133:44: note: ')' token is here
+    io_external_encoding = rb_funcall(src, rb_intern("external_encoding"), 0);
+                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+psych_parser.c:529:48: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    mark_klass = rb_const_get_at(cPsychParser, rb_intern("Mark"));
+                                               ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+psych_parser.c:529:48: note: '{' token is here
+    mark_klass = rb_const_get_at(cPsychParser, rb_intern("Mark"));
+                                               ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+psych_parser.c:529:48: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    mark_klass = rb_const_get_at(cPsychParser, rb_intern("Mark"));
+                                               ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+psych_parser.c:529:48: note: ')' token is here
+    mark_klass = rb_const_get_at(cPsychParser, rb_intern("Mark"));
+                                               ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+8 warnings generated.
+compiling psych_to_ruby.c
+compiling psych_yaml_tree.c
+linking shared-object psych.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/psych-4.0.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20221005-97445-lqi6b0 sitelibdir\=./.gem.20221005-97445-lqi6b0 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 psych.bundle ./.gem.20221005-97445-lqi6b0

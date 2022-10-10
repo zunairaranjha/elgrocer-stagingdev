@@ -1,0 +1,288 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rbtree3-0.6.0
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for rb_exec_recursive() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rbtree3-0.6.0
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-10rl5s0 sitelibdir\=./.gem.20221005-89237-10rl5s0 clean
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rbtree3-0.6.0
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-10rl5s0 sitelibdir\=./.gem.20221005-89237-10rl5s0
+compiling dict.c
+compiling rbtree.c
+rbtree.c:1732:16: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_bound = rb_intern("bound");
+               ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1732:16: note: '{' token is here
+    id_bound = rb_intern("bound");
+               ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1732:16: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_bound = rb_intern("bound");
+               ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1732:16: note: ')' token is here
+    id_bound = rb_intern("bound");
+               ^~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+rbtree.c:1733:14: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_cmp = rb_intern("<=>");
+             ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1733:14: note: '{' token is here
+    id_cmp = rb_intern("<=>");
+             ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1733:14: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_cmp = rb_intern("<=>");
+             ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1733:14: note: ')' token is here
+    id_cmp = rb_intern("<=>");
+             ^~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+rbtree.c:1734:15: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_call = rb_intern("call");
+              ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1734:15: note: '{' token is here
+    id_call = rb_intern("call");
+              ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1734:15: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_call = rb_intern("call");
+              ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1734:15: note: ')' token is here
+    id_call = rb_intern("call");
+              ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+rbtree.c:1735:18: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_default = rb_intern("default");
+                 ^~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1735:18: note: '{' token is here
+    id_default = rb_intern("default");
+                 ^~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1735:18: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_default = rb_intern("default");
+                 ^~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1735:18: note: ')' token is here
+    id_default = rb_intern("default");
+                 ^~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+rbtree.c:1742:26: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_comma_breakable = rb_intern("comma_breakable");
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1742:26: note: '{' token is here
+    id_comma_breakable = rb_intern("comma_breakable");
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1742:26: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_comma_breakable = rb_intern("comma_breakable");
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1742:26: note: ')' token is here
+    id_comma_breakable = rb_intern("comma_breakable");
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+rbtree.c:1743:23: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_object_group = rb_intern("object_group");
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1743:23: note: '{' token is here
+    id_object_group = rb_intern("object_group");
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1743:23: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_object_group = rb_intern("object_group");
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1743:23: note: ')' token is here
+    id_object_group = rb_intern("object_group");
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+rbtree.c:1744:18: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_pp_hash = rb_intern("pp_hash");
+                 ^~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1744:18: note: '{' token is here
+    id_pp_hash = rb_intern("pp_hash");
+                 ^~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1744:18: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_pp_hash = rb_intern("pp_hash");
+                 ^~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1744:18: note: ')' token is here
+    id_pp_hash = rb_intern("pp_hash");
+                 ^~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+rbtree.c:1745:15: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_text = rb_intern("text");
+              ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1745:15: note: '{' token is here
+    id_text = rb_intern("text");
+              ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1745:15: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_text = rb_intern("text");
+              ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1745:15: note: ')' token is here
+    id_text = rb_intern("text");
+              ^~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+rbtree.c:1746:13: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_pp = rb_intern("pp");
+            ^~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+rbtree.c:1746:13: note: '{' token is here
+    id_pp = rb_intern("pp");
+            ^~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+rbtree.c:1746:13: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    id_pp = rb_intern("pp");
+            ^~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+rbtree.c:1746:13: note: ')' token is here
+    id_pp = rb_intern("pp");
+            ^~~~~~~~~~~~~~~
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+18 warnings generated.
+linking shared-object rbtree.bundle
+
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rbtree3-0.6.0
+make DESTDIR\= sitearchdir\=./.gem.20221005-89237-10rl5s0 sitelibdir\=./.gem.20221005-89237-10rl5s0 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 rbtree.bundle ./.gem.20221005-89237-10rl5s0

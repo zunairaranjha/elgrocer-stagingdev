@@ -1,0 +1,19 @@
+<%= form_tag(admin_brand_priority_update_path, method: "post", multipart: true, :class => 'formtastic' ) do |f| %>
+	<fieldset class="inputs">
+		<legend>
+			<span><%= params[:id]? Category.find(params[:id]).name : "All " %> Brands Priority:</span>
+		</legend>
+		<ol>
+			<%brands.each do |brand|%>
+			<li class = 'string input optional stringish'>
+				<%= label_tag brand.name %>
+				<%= text_field_tag "brands[#{brand.id}]", brand.priority %>
+			</li>
+			<%end%>
+		</ol>
+	</fieldset>
+	<fieldset class="actions">
+  		<%= submit_tag 'Save' %>
+  	</fieldset>
+<% end %>
+<br/>

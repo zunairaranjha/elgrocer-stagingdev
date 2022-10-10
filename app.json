@@ -1,0 +1,159 @@
+{
+  "name": "elgrocer-api",
+  "scripts": {
+  },
+  "env": {
+    "ADMIN": {
+      "required": true
+    },
+    "APNS_TOKEN": {
+      "required": true
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "BONSAI_URL": {
+      "required": true
+    },
+    "BUILDPACK_URL": {
+      "required": true
+    },
+    "GCM_TOKEN": {
+      "required": true
+    },
+    "GOOGLE_API_KEY_PUSH": {
+      "required": true
+    },
+    "GOOGLE_MAPS_KEY": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_BLACK_URL": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_OLIVE_URL": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "LD_LIBRARY_PATH": {
+      "required": true
+    },
+    "LIBRATO_PASSWORD": {
+      "required": true
+    },
+    "LIBRATO_TOKEN": {
+      "required": true
+    },
+    "LIBRATO_USER": {
+      "required": true
+    },
+    "LOG_LEVEL": {
+      "required": true
+    },
+    "MANDRILL_API_KEY": {
+      "required": true
+    },
+    "MANDRILL_USERNAME": {
+      "required": true
+    },
+    "MAX_THREADS": {
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LOG": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "PUSHWOOSH_API_TOKEN": {
+      "required": true
+    },
+    "PUSHWOOSH_APPLICATION_CODE": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "REDIS_URL": {
+      "required": true
+    },
+    "REDISCLOUD_URL": {
+      "required": true
+    },
+    "REDISTOGO_URL": {
+      "required": true
+    },
+    "S3_BUCKET_NAME": {
+      "required": true
+    },
+    "SCOUT_KEY": {
+      "required": true
+    },
+    "SCOUT_LOG_LEVEL": {
+      "required": true
+    },
+    "SCOUT_MONITOR": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "SENDGRID_PASSWORD": {
+      "required": true
+    },
+    "SENDGRID_USERNAME": {
+      "required": true
+    },
+    "SLACK_HOOK": {
+      "required": true
+    },
+    "TEMPORIZE_URL": {
+      "required": true
+    },
+    "TZ": {
+      "required": true
+    },
+    "WEB_CONCURRENCY": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "bonsai",
+    "heroku-postgresql",
+    "librato",
+    "newrelic",
+    "papertrail",
+    "heroku-postgresql",
+    "pushwoosh",
+    "rediscloud",
+    "redismonitor",
+    "redistogo",
+    "scheduler",
+    "scout",
+    "sendgrid",
+    "temporize"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-multi.git"
+    },
+    {
+      "url": "https://github.com/ahamidi/heroku-geo-buildpack.git"
+    }
+  ]
+}

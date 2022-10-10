@@ -1,0 +1,19 @@
+<div><%= I18n.t("emails.hello_from") %> </div>
+
+<br>
+<p>
+<%= I18n.t("wallet.used_balance",amount_used: @amount_used) %>
+</p>
+<p>
+<%= I18n.t("wallet.remaining_balance",wallet_total: @shopper.wallet_total) %>
+</p>
+<div>
+<%= I18n.t("wallet.feedback_questions") %>
+</div>
+<br> <br>
+<div>
+<%=I18n.t("emails.regards")  %>
+</div>
+<div>
+<%=I18n.t("emails.grocer_team")%>
+</div>

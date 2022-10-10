@@ -1,0 +1,3 @@
+current directory: /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/mimemagic-0.3.10/ext/mimemagic
+/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/bin/ruby -I/Users/zunairaranjha/.rvm/rubies/ruby-2.7.2/lib/ruby/site_ruby/2.7.0 -rrubygems /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/gems/rake-13.0.6/exe/rake RUBYARCHDIR\=/Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/extensions/arm64-darwin-21/2.7.0/mimemagic-0.3.10 RUBYLIBDIR\=/Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/extensions/arm64-darwin-21/2.7.0/mimemagic-0.3.10
+mkdir -p /Users/zunairaranjha/Desktop/elgrocer-api-develop/vendor/ruby/2.7.0/extensions/arm64-darwin-21/2.7.0/mimemagic-0.3.10/mimemagic

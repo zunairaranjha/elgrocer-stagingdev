@@ -1,0 +1,9 @@
+locale_name:
+  collections:
+    your_first_collection:
+      - 
+        - First collection value
+        - first_collection_value
+      - 
+        - Second collection value
+        - second_collection_value

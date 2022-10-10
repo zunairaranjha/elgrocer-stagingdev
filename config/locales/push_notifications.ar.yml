@@ -1,0 +1,16 @@
+ar:
+  push_message:
+    message_002: "لقد تم إلغاء طلبك لفشل عملية الدفع. الرجاء اضغط هنا للمحاولة مرة أخرى أو استخدام طريقة دفع أخرى!"
+    message_100: "Final amount to capture is greater than the order's total amount!"
+    message_101: "Amount threshold is accepted or rejected!"
+    message_102: "User has selected products!"
+    message_103: "New order is allocated!"
+    message_104: "New allocation!"
+    message_105: "Order Deallocated!"
+    message_106: "لقد تم تعليق طلبك لحين استكمال تفاصيل طريقة الدفع. الرجاء اضغط هنا لإستكمال طلبك"
+    message_107: "Sorry! You have been logged out due to inactivity."
+    message_108: "Customer is on the way and should reach in 10 minutes Order#%{order_id}"
+    message_109: "Please, make sure you arrive on time. Your order will be held for 15 mins max."
+    message_110: "Driver has arrived at Store!"
+    message_111: "قد وصل طلبك من الجروسر!"
+    message_112: "Customer is on the spot. Deliver the order now. Order#%{order_id}"
